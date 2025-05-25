@@ -10,7 +10,7 @@ AdGuard Home 分流配置生成脚本
 3. 读取自定义 DNS 规则（格式: domain: dns1, dns2, ...）
 4. 根据提取的数据生成两种模式的配置：
    - 单域名规则（白名单：国内域名走国内DNS，其余走国外DNS；黑名单：国外域名走国外DNS，其余走国内DNS）
-   - 单行规则：将所有域名按升序排列后用 "/" 连接，构造一行规则
+   - 单行规则：将所有域名按升序排序后，用 "/" 连接，构造一行规则
 5. 生成的文件保存在 dist 目录下：
    - whitelist_mode.txt：单域名白名单配置
    - blacklist_mode.txt：单域名黑名单配置
@@ -126,6 +126,7 @@ def generate_single_whitelist(cn_domains: Set[str], foreign_dns: List[str],
             *[f"[/{k}/]{' '.join(v)}" for k, v in sorted(custom_dns.items())],
             ""
         ])
+    # 使用自定义 DNS 时，优先排除掉自定义规则中已有的域名
     filtered = cn_domains - set(custom_dns.keys()) if custom_dns else cn_domains
     config.extend([
         "# 国内域名规则（单域名）",
@@ -162,7 +163,17 @@ def generate_single_line_rule(domains: Set[str], dns: List[str]) -> str:
     """
     生成单行规则：
     将所有域名按升序排序后用 "/" 连接，然后构造规则格式：
-    [/{服务器配置
+    [/{域名1/域名2/.../}]{DNS服务器}
+    """
+    sorted_domains = sorted(domains)
+    rule = f"[/{'/'.join(sorted_domains)}/]{' '.join(dns)}"
+    return rule
+
+def main():
+    """主函数：加载配置、提取域名、生成配置文件和单行规则"""
+    config = load_config()
+
+    # 加载 DNS 服务器配置
     cn_dns = extract_domains.read_dns_servers(
         os.path.join("config", "cn_dns.txt"),
         default_servers=["https://doh.pub/dns-query", "https://dns.alidns.com/dns-query"]
@@ -173,7 +184,13 @@ def generate_single_line_rule(domains: Set[str], dns: List[str]) -> str:
     )
 
     # 读取自定义 DNS 规则
-    custom_dns = read_custom_domain_dns(os.path.join("config", {}).get("cn_domains", [])
+    custom_dns = read_custom_domain_dns(os.path.join("config", "custom_domain_dns.txt"))
+    logger.info(f"使用国内DNS服务器: {cn_dns}")
+    logger.info(f"使用国外DNS服务器: {foreign_dns}")
+    logger.info(f"自定义域名DNS规则数: {len(custom_dns)}")
+
+    # 处理域名来源
+    cn_sources = config.get("sources", {}).get("cn_domains", [])
     foreign_sources = config.get("sources", {}).get("foreign_domains", [])
     cn_domains = process_sources(cn_sources, os.path.join("config", "custom_cn_domains.txt"))
     foreign_domains = process_sources(foreign_sources, os.path.join("config", "custom_foreign_domains.txt"))
