@@ -4,6 +4,9 @@
 """
 配置文件生成脚本
 用于生成 AdGuard Home 的配置文件，包括白名单模式和黑名单模式
+生成文件：
+- whitelist_mode.txt（原白名单） 和 gn.txt（新增简写）
+- blacklist_mode.txt（原黑名单） 和 gw.txt（新增简写）
 """
 
 import os
@@ -287,12 +290,20 @@ def main():
     # 确保目录存在
     os.makedirs('dist', exist_ok=True)
 
-    # 保存配置文件
+    # ==== 核心修改部分：新增简写文件名 ====
+    # 保存白名单模式配置文件（原文件名 + 新增简写）
     with open(os.path.join('dist', 'whitelist_mode.txt'), 'w', encoding='utf-8') as f:
         f.write(whitelist_config)
+    with open(os.path.join('dist', 'gn.txt'), 'w', encoding='utf-8') as f:  # 新增简写
+        f.write(whitelist_config)
+        logger.info("白名单简写文件保存为: gn.txt")
 
+    # 保存黑名单模式配置文件（原文件名 + 新增简写）
     with open(os.path.join('dist', 'blacklist_mode.txt'), 'w', encoding='utf-8') as f:
         f.write(blacklist_config)
+    with open(os.path.join('dist', 'gw.txt'), 'w', encoding='utf-8') as f:  # 新增简写
+        f.write(blacklist_config)
+        logger.info("黑名单简写文件保存为: gw.txt")
 
     # 保存域名列表（用于调试）
     with open(os.path.join('dist', 'cn_domains.txt'), 'w', encoding='utf-8') as f:
@@ -310,8 +321,8 @@ def main():
                 f.write(f"{domain}: {', '.join(dns_list)}\n")
 
     logger.info("配置文件生成完成")
-    logger.info(f"白名单模式：共 {len(cn_domains)} 个国内域名")
-    logger.info(f"黑名单模式：共 {len(foreign_domains)} 个国外域名")
+    logger.info(f"白名单模式：共 {len(cn_domains)} 个国内域名（保存为 whitelist_mode.txt 和 gn.txt）")
+    logger.info(f"黑名单模式：共 {len(foreign_domains)} 个国外域名（保存为 blacklist_mode.txt 和 gw.txt）")
     logger.info(f"自定义域名DNS：共 {len(custom_domain_dns)} 个域名")
 
     # 统计被覆盖的域名
