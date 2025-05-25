@@ -4,18 +4,6 @@
 """
 配置文件生成脚本
 用于生成 AdGuard Home 的配置文件，包括白名单模式和黑名单模式
-
-主要功能：
-1. 加载或创建基本配置文件（config/config.json）
-2. 下载并解析远程域名规则列表，同时支持自定义域名文件（custom_cn_domains.txt, custom_foreign_domains.txt）
-3. 读取自定义DNS规则，格式为 "域名: dns1, dns2, ..." 
-4. 根据提取的数据生成两种模式下的配置文件：
-   - 白名单模式：命中国内域名走国内DNS，其他走国外DNS
-   - 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
-5. 新增多域名多DNS分流规则为连在一起的一行：
-   - 白名单模式生成的规则写入 dist/GN.txt
-   - 黑名单模式生成的规则写入 dist/GW.txt
-6. 最后生成的配置文件和域名列表（调试用途）保存在 dist 目录中
 """
 
 import os
@@ -35,7 +23,13 @@ import extract_domains
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
- dict:
+    handlers=[
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger('generate_config')
+
+def load_config() -> dict:
     """加载配置文件"""
     config_path = os.path.join('config', 'config.json')
 
@@ -91,9 +85,9 @@ def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
     """读取自定义域名DNS配置
     
     文件格式:
-      domain1.com: dns1, dns2, dns3
-      domain2.com: dns4
-      # 注释行
+    domain1.com: dns1, dns2, dns3
+    domain2.com: dns4
+    # 注释行
     """
     custom_dns = {}
 
@@ -104,13 +98,16 @@ def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
     with open(file_path, 'r', encoding='utf-8') as f:
         for line_num, line in enumerate(f, 1):
             line = line.strip()
+
             # 跳过空行和注释
             if not line or line.startswith('#'):
                 continue
+
             # 解析格式: domain: dns1, dns2, dns3
             if ':' not in line:
                 logger.warning(f"第 {line_num} 行格式错误，缺少冒号: {line}")
                 continue
+
             parts = line.split(':', 1)
             domain = parts[0].strip()
             dns_servers = [dns.strip() for dns in parts[1].split(',') if dns.strip()]
@@ -145,33 +142,33 @@ def generate_whitelist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, 
     if custom_domain_dns:
         config_lines.append("# 包含自定义域名DNS规则")
     config_lines.append("")
-    
+
     # 添加默认上游DNS服务器（国外）
     config_lines.append("# 默认上游DNS服务器（国外）")
     for dns in foreign_dns:
         config_lines.append(dns)
     config_lines.append("")
-    
-    # 添加自定义域名DNS规则（优先级最高）
+
+    # 先添加自定义域名DNS规则（优先级最高）
     if custom_domain_dns:
-        config_lines.append("#" + "=" * 50)
+        config_lines.append("#" + "="*50)
         config_lines.append(f"# 自定义域名DNS规则（共 {len(custom_domain_dns)} 个域名）")
         config_lines.append("# 这些规则优先级最高，会覆盖下面的国内/国外规则")
-        config_lines.append("#" * 50)
+        config_lines.append("#" + "="*50)
         for domain, dns_list in sorted(custom_domain_dns.items()):
             dns_string = ' '.join(dns_list)
             config_lines.append(f"[/{domain}/]{dns_string}")
         config_lines.append("")
-    
-    # 排除自定义DNS已处理的域名
+
+    # 从国内域名中排除已有自定义DNS的域名
     cn_domains_filtered = cn_domains - set(custom_domain_dns.keys()) if custom_domain_dns else cn_domains
 
     # 添加国内域名规则
-    config_lines.append("#" + "=" * 50)
+    config_lines.append("#" + "="*50)
     config_lines.append(f"# 国内域名规则（共 {len(cn_domains_filtered)} 个域名）")
     if custom_domain_dns and len(cn_domains) != len(cn_domains_filtered):
         config_lines.append(f"# 已排除 {len(cn_domains) - len(cn_domains_filtered)} 个自定义DNS域名")
-    config_lines.append("#" * 50)
+    config_lines.append("#" + "="*50)
     for domain in sorted(cn_domains_filtered):
         dns_list = ' '.join(cn_dns)
         config_lines.append(f"[/{domain}/]{dns_list}")
@@ -189,71 +186,52 @@ def generate_blacklist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, 
     if custom_domain_dns:
         config_lines.append("# 包含自定义域名DNS规则")
     config_lines.append("")
-    
+
     # 添加默认上游DNS服务器（国内）
     config_lines.append("# 默认上游DNS服务器（国内）")
     for dns in cn_dns:
         config_lines.append(dns)
     config_lines.append("")
-    
-    # 添加自定义域名DNS规则（优先级最高）
+
+    # 先添加自定义域名DNS规则（优先级最高）
     if custom_domain_dns:
-        config_lines.append("#" + "=" * 50)
+        config_lines.append("#" + "="*50)
         config_lines.append(f"# 自定义域名DNS规则（共 {len(custom_domain_dns)} 个域名）")
         config_lines.append("# 这些规则优先级最高，会覆盖下面的国内/国外规则")
-        config_lines.append("#" * 50)
+        config_lines.append("#" + "="*50)
         for domain, dns_list in sorted(custom_domain_dns.items()):
             dns_string = ' '.join(dns_list)
             config_lines.append(f"[/{domain}/]{dns_string}")
         config_lines.append("")
-    
-    # 排除自定义DNS已处理的域名
+
+    # 从国外域名中排除已有自定义DNS的域名
     foreign_domains_filtered = foreign_domains - set(custom_domain_dns.keys()) if custom_domain_dns else foreign_domains
 
     # 添加国外域名规则
-    config_lines.append("#" + "=" * 50)
+    config_lines.append("#" + "="*50)
     config_lines.append(f"# 国外域名规则（共 {len(foreign_domains_filtered)} 个域名）")
     if custom_domain_dns and len(foreign_domains) != len(foreign_domains_filtered):
         config_lines.append(f"# 已排除 {len(foreign_domains) - len(foreign_domains_filtered)} 个自定义DNS域名")
-    config_lines.append("#" * 50)
+    config_lines.append("#" + "="*50)
     for domain in sorted(foreign_domains_filtered):
         dns_list = ' '.join(foreign_dns)
         config_lines.append(f"[/{domain}/]{dns_list}")
 
     return '\n'.join(config_lines)
 
-def generate_multi_dns_rule_white(cn_domains: Set[str], cn_dns: List[str]) -> str:
-    """
-    生成白名单模式下的多域名多DNS分流规则（整行输出）
-    将所有国内域名对应的规则合并为一行
-    """
-    rules = []
-    for domain in sorted(cn_domains):
-        rules.append(f"[/{domain}/]{' '.join(cn_dns)}")
-    return " ".join(rules)
-
-def generate_multi_dns_rule_black(foreign_domains: Set[str], foreign_dns: List[str]) -> str:
-    """
-    生成黑名单模式下的多域名多DNS分流规则（整行输出）
-    将所有国外域名对应的规则合并为一行
-    """
-    rules = []
-    for domain in sorted(foreign_domains):
-        rules.append(f"[/{domain}/]{' '.join(foreign_dns)}")
-    return " ".join(rules)
-
-def debug_domain(domains: Set[str], domain_to_check: str) -> None:
-    """调试指定域名是否在列表中"""
+def debug_domain(domains, domain_to_check):
+    """调试指定域名是否在域名列表中"""
     if domain_to_check in domains:
         logger.info(f"域名 {domain_to_check} 在列表中")
     else:
         logger.info(f"域名 {domain_to_check} 不在列表中")
-        similar = [d for d in domains if domain_to_check in d or d in domain_to_check]
-        if similar:
-            logger.info(f"找到相似域名: {similar}")
+        # 查找相似域名
+        similar_domains = [d for d in domains if domain_to_check in d or d in domain_to_check]
+        if similar_domains:
+            logger.info(f"找到相似域名: {similar_domains}")
 
-def remove_duplicates_in_list(domains: Set[str]) -> Set[str]:
-    """对域名列表去重，返回唯一域名集合"""
+def remove_duplicates_in_list(domains):
+    """在单个列表内部去重"""
     initial_count = len(domains)
     unique_domains = set(domains)
     if len(unique_domains) < initial_count:
@@ -261,81 +239,90 @@ def remove_duplicates_in_list(domains: Set[str]) -> Set[str]:
     return unique_domains
 
 def main():
-    """主函数：加载配置、提取域名、生成配置及保存结果到文件"""
+    """主函数"""
+    # 加载配置
     config = load_config()
+
+    # 获取DNS服务器
     default_cn_dns = ["https://doh.pub/dns-query", "https://dns.alidns.com/dns-query"]
     default_foreign_dns = ["https://1.1.1.1/dns-query", "https://8.8.8.8/dns-query"]
 
     cn_dns = extract_domains.read_dns_servers(os.path.join('config', 'cn_dns.txt'), default_cn_dns)
     foreign_dns = extract_domains.read_dns_servers(os.path.join('config', 'foreign_dns.txt'), default_foreign_dns)
+
+    # 读取自定义域名DNS配置
     custom_domain_dns = read_custom_domain_dns(os.path.join('config', 'custom_domain_dns.txt'))
-    
+
     logger.info(f"使用国内DNS服务器: {cn_dns}")
     logger.info(f"使用国外DNS服务器: {foreign_dns}")
     logger.info(f"自定义域名DNS规则数: {len(custom_domain_dns)}")
-    
+
+    # 获取域名源
     cn_sources = config.get('sources', {}).get('cn_domains', [])
     foreign_sources = config.get('sources', {}).get('foreign_domains', [])
-    
+
+    # 提取域名
     logger.info("开始提取国内域名...")
     cn_domains = process_sources(cn_sources, os.path.join('config', 'custom_cn_domains.txt'))
+
     logger.info("开始提取国外域名...")
     foreign_domains = process_sources(foreign_sources, os.path.join('config', 'custom_foreign_domains.txt'))
-    
+
+    # 单独在各自列表内去重
     logger.info("对国内域名列表进行去重...")
     cn_domains = remove_duplicates_in_list(cn_domains)
     logger.info(f"去重后国内域名数量: {len(cn_domains)}")
-    
+
     logger.info("对国外域名列表进行去重...")
     foreign_domains = remove_duplicates_in_list(foreign_domains)
     logger.info(f"去重后国外域名数量: {len(foreign_domains)}")
-    
+
+    # 生成配置文件
     logger.info("生成白名单模式配置文件...")
     whitelist_config = generate_whitelist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns)
+
     logger.info("生成黑名单模式配置文件...")
     blacklist_config = generate_blacklist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns)
 
+    # 确保目录存在
     os.makedirs('dist', exist_ok=True)
-    
+
+    # 保存配置文件
     with open(os.path.join('dist', 'whitelist_mode.txt'), 'w', encoding='utf-8') as f:
         f.write(whitelist_config)
+
     with open(os.path.join('dist', 'blacklist_mode.txt'), 'w', encoding='utf-8') as f:
         f.write(blacklist_config)
-    
+
+    # 保存域名列表（用于调试）
     with open(os.path.join('dist', 'cn_domains.txt'), 'w', encoding='utf-8') as f:
         for domain in sorted(cn_domains):
             f.write(f"{domain}\n")
+
     with open(os.path.join('dist', 'foreign_domains.txt'), 'w', encoding='utf-8') as f:
         for domain in sorted(foreign_domains):
             f.write(f"{domain}\n")
-    
+
+    # 保存自定义域名DNS列表（用于调试）
     if custom_domain_dns:
         with open(os.path.join('dist', 'custom_domain_dns_debug.txt'), 'w', encoding='utf-8') as f:
             for domain, dns_list in sorted(custom_domain_dns.items()):
                 f.write(f"{domain}: {', '.join(dns_list)}\n")
-    
+
     logger.info("配置文件生成完成")
     logger.info(f"白名单模式：共 {len(cn_domains)} 个国内域名")
     logger.info(f"黑名单模式：共 {len(foreign_domains)} 个国外域名")
     logger.info(f"自定义域名DNS：共 {len(custom_domain_dns)} 个域名")
-    
+
+    # 统计被覆盖的域名
     if custom_domain_dns:
         cn_overridden = len(cn_domains.intersection(set(custom_domain_dns.keys())))
         foreign_overridden = len(foreign_domains.intersection(set(custom_domain_dns.keys())))
+
         if cn_overridden > 0:
             logger.info(f"自定义DNS覆盖了 {cn_overridden} 个国内域名")
         if foreign_overridden > 0:
             logger.info(f"自定义DNS覆盖了 {foreign_overridden} 个国外域名")
-
-    # 新增：生成连在一起的多域名多DNS分流规则
-    white_rule = generate_multi_dns_rule_white(cn_domains, cn_dns)
-    black_rule = generate_multi_dns_rule_black(foreign_domains, foreign_dns)
-    
-    # 分别写入到 dist/GN.txt（国内） 和 dist/GW.txt（国外）
-    with open(os.path.join('dist', 'GN.txt'), 'w', encoding='utf-8') as f:
-        f.write(white_rule)
-    with open(os.path.join('dist', 'GW.txt'), 'w', encoding='utf-8') as f:
-        f.write(black_rule)
 
 if __name__ == "__main__":
     main()
