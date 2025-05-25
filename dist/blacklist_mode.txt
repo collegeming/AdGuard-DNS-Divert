@@ -1,25 +1,17 @@
-# AdGuard Home DNS 分流配置 - 黑名单模式
-# 自动生成于 2025-05-25 14:38:11
-# 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
-# 包含自定义域名DNS规则
-
-# 默认上游DNS服务器（国内）
+# AdGuard Home 黑名单模式（单域名）
+# 生成时间: 2025-05-25 16:25:17
+# 默认上游 DNS（国内）:
 https://dns.alidns.com/dns-query
 https://doh.360.cn/dns-query
 https://1.12.12.12/dns-query
 https://120.53.53.53/dns-query
 https://doh-home.onedns.net/dns-query
 
-#==================================================
-# 自定义域名DNS规则（共 2 个域名）
-# 这些规则优先级最高，会覆盖下面的国内/国外规则
-#==================================================
+# 自定义规则（优先级最高）
 [/as174.de/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
 [/tieba.baidu.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
 
-#==================================================
-# 国外域名规则（共 32803 个域名）
-#==================================================
+# 国外域名规则（单域名）
 [/000webhost.com/]https://dns.nextdns.io/e858b2 https://dns.bebasid.com/dns-query
 [/01.org/]https://dns.nextdns.io/e858b2 https://dns.bebasid.com/dns-query
 [/02weqj32.com/]https://dns.nextdns.io/e858b2 https://dns.bebasid.com/dns-query
