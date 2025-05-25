@@ -1,19 +1,11 @@
 # AdGuard Home DNS 分流配置 - 白名单模式
-# 自动生成于 2025-05-25 09:45:34
+# 自动生成于 2025-05-25 09:47:38
 # 白名单模式：命中国内域名走国内DNS，其他走国外DNS
 # 包含自定义域名DNS规则
 
 # 默认上游DNS服务器（国外）
-quic://dns.nextdns.io:853
-quic://dns.adguard.com:784
-quic://dns.nextdns.io:853
-quic://dns.adguard.com:784
-https://dns.cloudflare.com/dns-query
-https://dns.google/dns-query
-https://dns.adguard-dns.com/dns-query
-tls://dns.cloudflare.com
-tls://dns.google
-tls://dns.adguard-dns.com
+https://dns.nextdns.io/e858b2
+https://dns.bebasid.com/dns-query
 
 #==================================================
 # 自定义域名DNS规则（共 2 个域名）
