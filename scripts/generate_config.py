@@ -7,15 +7,15 @@ AdGuard Home 分流配置生成脚本
 主要功能：
 1. 加载或创建基本配置文件（config/config.json）
 2. 下载并解析远程域名规则列表，同时支持自定义域名文件（custom_cn_domains.txt, custom_foreign_domains.txt）
-3. 读取: dns1, dns2, ...）
+3. 读取自定义 DNS 规则（格式: domain: dns1, dns2, ...）
 4. 根据提取的数据生成两种模式的配置：
    - 单域名规则（白名单：国内域名走国内DNS，其余走国外DNS；黑名单：国外域名走国外DNS，其余走国内DNS）
-   - 单行规则：将所有域名连在一起，用 "/" 连接，形成一行规则
+   - 单行规则：将所有域名按升序排列后用 "/" 连接，构造一行规则
 5. 生成的文件保存在 dist 目录下：
    - whitelist_mode.txt：单域名白名单配置
    - blacklist_mode.txt：单域名黑名单配置
-   - gn.txt：单行白名单配置（所有国内域名连一行，用 "/" 连接）
-   - gw.txt：单行黑名单配置（所有国外域名连一行，用 "/" 连接）
+   - gn.txt：单行白名单规则（所有国内域名连在一起，用 "/" 分隔）
+   - gw.txt：单行黑名单规则（所有国外域名连在一起，用 "/" 分隔）
    - 其它调试文件（域名列表、自定义 DNS 规则）也将保存到 dist 目录中
 """
 
@@ -37,9 +37,6 @@ logging.basicConfig(
     handlers=[logging.StreamHandler(sys.stdout)]
 )
 logger = logging.getLogger("DNS_Config_Generator")
-
-# 每组域名个数（单行规则不使用此参数）
-GROUP_SIZE = 10
 
 def load_config() -> dict:
     """加载配置文件，如果不存在则创建默认配置"""
@@ -163,18 +160,9 @@ def generate_single_blacklist(foreign_domains: Set[str], cn_dns: List[str],
 
 def generate_single_line_rule(domains: Set[str], dns: List[str]) -> str:
     """
-    生成单行规则：将所有域名按照升序排序后，用 "/" 连接，
-    然后构造规则格式为 [/{域名1/域名2/.../}]{DNS服务器}
-    """
-    sorted_domains = sorted(domains)
-    rule = f"[/{'/'.join(sorted_domains)}/]{' '.join(dns)}"
-    return rule
-
-def main():
-    """主函数：加载配置、提取域名、生成配置文件和单行规则"""
-    config = load_config()
-
-    # 加载 DNS 服务器配置
+    生成单行规则：
+    将所有域名按升序排序后用 "/" 连接，然后构造规则格式：
+    [/{服务器配置
     cn_dns = extract_domains.read_dns_servers(
         os.path.join("config", "cn_dns.txt"),
         default_servers=["https://doh.pub/dns-query", "https://dns.alidns.com/dns-query"]
@@ -185,13 +173,7 @@ def main():
     )
 
     # 读取自定义 DNS 规则
-    custom_dns = read_custom_domain_dns(os.path.join("config", "custom_domain_dns.txt"))
-    logger.info(f"使用国内DNS服务器: {cn_dns}")
-    logger.info(f"使用国外DNS服务器: {foreign_dns}")
-    logger.info(f"自定义域名DNS规则数: {len(custom_dns)}")
-
-    # 处理域名来源
-    cn_sources = config.get("sources", {}).get("cn_domains", [])
+    custom_dns = read_custom_domain_dns(os.path.join("config", {}).get("cn_domains", [])
     foreign_sources = config.get("sources", {}).get("foreign_domains", [])
     cn_domains = process_sources(cn_sources, os.path.join("config", "custom_cn_domains.txt"))
     foreign_domains = process_sources(foreign_sources, os.path.join("config", "custom_foreign_domains.txt"))
@@ -209,7 +191,7 @@ def main():
     with open(os.path.join("dist", "blacklist_mode.txt"), "w", encoding="utf-8") as f:
         f.write(generate_single_blacklist(foreign_domains, cn_dns, foreign_dns, custom_dns))
 
-    # 生成单行规则配置文件（gn.txt 和 gw.txt），所有域名连在一起，用 "/" 分隔
+    # 生成单行规则配置文件（所有域名连在一起，用 "/" 分隔）
     with open(os.path.join("dist", "gn.txt"), "w", encoding="utf-8") as f:
         f.write(generate_single_line_rule(cn_domains, cn_dns))
     with open(os.path.join("dist", "gw.txt"), "w", encoding="utf-8") as f:
