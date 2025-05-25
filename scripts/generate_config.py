@@ -72,6 +72,7 @@ def process_sources(sources: List[str], custom_file: str = None) -> Set[str]:
     """处理域名源数据，下载并合并各来源提取的域名"""
     domains = set()
     for source in sources:
+        # 利用 Python3.8+ 的赋值表达式
         if content := extract_domains.download_file(source):
             extracted = extract_domains.extract_domains_from_file(content, source)
             logger.info(f"从 {source} 提取域名: {len(extracted)} 个")
@@ -226,13 +227,12 @@ def main():
     config = load_config()
 
     # 加载 DNS 服务器配置
-    cn_dns = extract_domains.read_dns_servers(os.path.join('config', 'cn_dns.txt'))
-    if not cn_dns:
-        cn_dns = ["https://doh.pub/dns-query", "https://dns.alidns.com/dns-query"]
-
-    foreign_dns = extract_domains.read_dns_servers(os.path.join('config', 'foreign_dns.txt'))
-    if not foreign_dns:
-        foreign_dns = ["https://1.1.1.1/dns-query", "https://8.8.8.8/dns-query"]
+    cn_dns = extract_domains.read_dns_servers(os.path.join('config', 'cn_dns.txt'),
+                                              default_servers=["https://doh.pub/dns-query",
+                                                               "https://dns.alidns.com/dns-query"])
+    foreign_dns = extract_domains.read_dns_servers(os.path.join('config', 'foreign_dns.txt'),
+                                                   default_servers=["https://1.1.1.1/dns-query",
+                                                                    "https://8.8.8.8/dns-query"])
 
     # 读取自定义 DNS 规则
     custom_dns = read_custom_domain_dns(os.path.join('config', 'custom_domain_dns.txt'))
