@@ -10,12 +10,12 @@ AdGuard Home 分流配置生成脚本
 3. 读取自定义 DNS 规则（格式: domain: dns1, dns2, ...）
 4. 根据提取的数据生成两种模式的配置：
    - 单域名规则（白名单：国内域名走国内DNS，其余走国外DNS；黑名单：国外域名走国外DNS，其余走国内DNS）
-   - 分流规则：将所有域名分别连在一起，用 "/" 连接，构造成单行多DNS的分流规则
+   - 分流规则：将所有域名按升序排序后用 "/" 连接，构造单行多DNS分流规则
 5. 生成的文件保存在 dist 目录下：
    - whitelist_mode.txt：单域名白名单配置
    - blacklist_mode.txt：单域名黑名单配置
-   - gn.txt：白名单分流规则（所有国内域名在一行，按 "/" 连接，后跟多个DNS）
-   - gw.txt：黑名单分流规则（所有国外域名在一行，按 "/" 连接，后跟多个DNS）
+   - gn.txt：分流白名单规则（所有国内域名连在一起，用 "/" 分隔，后跟多个DNS）
+   - gw.txt：分流黑名单规则（所有国外域名连在一起，用 "/" 分隔，后跟多个DNS）
    - 其它调试文件（域名列表、自定义 DNS 规则）也将保存到 dist 目录中
 """
 
@@ -207,7 +207,7 @@ def main():
     with open(os.path.join("dist", "blacklist_mode.txt"), "w", encoding="utf-8") as f:
         f.write(generate_single_blacklist(foreign_domains, cn_dns, foreign_dns, custom_dns))
 
-    # 生成分流规则配置文件（所有域名连在一起，用 "/" 分隔）
+    # 生成分流规则配置文件（所有域名连在一起，用 "/" 分隔，多 DNS 分流规则）
     with open(os.path.join("dist", "gn.txt"), "w", encoding="utf-8") as f:
         f.write(generate_single_line_rule(cn_domains, cn_dns))
     with open(os.path.join("dist", "gw.txt"), "w", encoding="utf-8") as f:
