@@ -12,7 +12,9 @@ AdGuard Home 分流配置生成脚本
    - 单域名规则（白名单：国内域名走国内DNS，其余走国外DNS；黑名单：国外域名走国外DNS，其余走国内DNS）
    - 分流规则：将所有域名分别连在一起，用 "/" 连接，构造成单行多DNS的分流规则
 5. 生成的文件保存在 dist 目录下：
-   - whitelist_mode.txt：单域名白名单配置（固定的前14行不变，后跟所有国内域名连在一起，用 "/" 分隔，再附带多个DNS）
+   - whitelist_mode.txt：单域名白名单配置
+   - blacklist_mode.txt：单域名黑名单配置
+   - gn.txt：白名单分流规则（固定的前14行不变，后跟所有国内域名连在一起，用 "/" 分隔，再附带多个DNS）
    - gw.txt：黑名单分流规则（固定的前14行不变，后跟所有国外域名连在一起，用 "/" 分隔，再附带多个DNS）
    - 其它调试文件（域名列表、自定义 DNS 规则）也将保存到 dist 目录中
 """
@@ -34,7 +36,11 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[logging.StreamHandler(sys.stdout)]
 )
-logger "config.json")
+logger = logging.getLogger("DNS_Config_Generator")
+
+def load_config() -> dict:
+    """加载配置文件，如果不存在则创建默认配置"""
+    config_path = os.path.join("config", "config.json")
     default_config = {
         "sources": {
             "cn_domains": [
@@ -56,7 +62,8 @@ logger "config.json")
         with open(config_path, "w", encoding="utf-8") as f:
             json.dump(default_config, f, indent=2, ensure_ascii=False)
         logger.info(f"初始化默认配置文件: {config_path}")
-    with open(config_path, "r json.load(f)
+    with open(config_path, "r", encoding="utf-8") as f:
+        return json.load(f)
 
 def process_sources(sources: List[str], custom_file: str = None) -> Set[str]:
     """处理域名源数据，下载并合并各来源提取的域名"""
@@ -232,13 +239,13 @@ def main():
         f.write(generate_single_blacklist(foreign_domains, cn_dns, foreign_dns, custom_dns))
 
     # 生成分流规则配置文件
-    # 对白名单模式（国内）: 固定前14行不变，后接生成的单行规则（所有国内域名连在一起，用 "/" 分隔，多DNS）
+    # 对白名单模式（国内）：固定前14行不变，后接生成的单行规则（国内所有域名连在一起，用 "/" 分隔，多DNS规则）
     gn_rule = generate_single_line_rule(cn_domains, cn_dns)
     gn_output = FIXED_HEADER_GN + "\n" + gn_rule
     with open(os.path.join("dist", "gn.txt"), "w", encoding="utf-8") as f:
         f.write(gn_output)
 
-    # 对黑名单模式（国外）: 固定前14行不变，后接生成的单行规则（所有国外域名连在一起，用 "/" 分隔，多DNS）
+    # 对黑名单模式（国外）：固定前14行不变，后接生成的单行规则（国外所有域名连在一起，用 "/" 分隔，多DNS规则）
     gw_rule = generate_single_line_rule(foreign_domains, foreign_dns)
     gw_output = FIXED_HEADER_GW + "\n" + gw_rule
     with open(os.path.join("dist", "gw.txt"), "w", encoding="utf-8") as f:
