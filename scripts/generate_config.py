@@ -22,8 +22,6 @@ import sys
 import json
 import logging
 import datetime
-import urllib.request
-from urllib.error import URLError
 from typing import Dict, List, Set
 from collections import defaultdict
 
@@ -34,10 +32,10 @@ import extract_domains
 # 配置日志输出
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[logging.StreamHandler(sys.stdout)]
 )
-logger = logging.getLogger('generate_config')
+logger = logging.getLogger("generate_config")
 
 
 def load_config() -> dict:
@@ -45,7 +43,7 @@ def load_config() -> dict:
     加载配置文件，如果不存在则自动创建默认配置文件。
     默认配置文件存放在 config/config.json 中。
     """
-    config_path = os.path.join('config', 'config.json')
+    config_path = os.path.join("config", "config.json")
     if not os.path.exists(config_path):
         config = {
             "sources": {
@@ -64,11 +62,11 @@ def load_config() -> dict:
             }
         }
         os.makedirs(os.path.dirname(config_path), exist_ok=True)
-        with open(config_path, 'w', encoding='utf-8') as f:
+        with open(config_path, "w", encoding="utf-8") as f:
             json.dump(config, f, indent=2, ensure_ascii=False)
         logger.info(f"默认配置文件已创建：{config_path}")
     else:
-        with open(config_path, 'r', encoding='utf-8') as f:
+        with open(config_path, "r", encoding="utf-8") as f:
             config = json.load(f)
     return config
 
@@ -106,17 +104,17 @@ def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
     if not os.path.exists(file_path):
         logger.info(f"自定义域名DNS文件不存在: {file_path}")
         return custom_dns
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         for line_num, line in enumerate(f, 1):
             line = line.strip()
-            if not line or line.startswith('#'):
+            if not line or line.startswith("#"):
                 continue
-            if ':' not in line:
+            if ":" not in line:
                 logger.warning(f"第 {line_num} 行格式错误，缺少冒号: {line}")
                 continue
-            domain, dns_str = line.split(':', 1)
+            domain, dns_str = line.split(":", 1)
             domain = domain.strip()
-            dns_servers = [dns.strip() for dns in dns_str.split(',') if dns.strip()]
+            dns_servers = [dns.strip() for dns in dns_str.split(",") if dns.strip()]
             if not domain:
                 logger.warning(f"第 {line_num} 行域名为空")
                 continue
@@ -124,7 +122,7 @@ def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
                 logger.warning(f"第 {line_num} 行DNS服务器为空")
                 continue
             # 验证域名格式，允许常见 TLD 缩写
-            if not extract_domains.is_valid_domain(domain) and domain not in ['cn', 'hk', 'mo', 'tw', 'jp', 'kr', 'sg']:
+            if not extract_domains.is_valid_domain(domain) and domain not in ["cn", "hk", "mo", "tw", "jp", "kr", "sg"]:
                 logger.warning(f"第 {line_num} 行域名格式无效: {domain}")
                 continue
             custom_dns[domain] = dns_servers
@@ -183,7 +181,10 @@ def generate_whitelist_config_grouped(cn_domains: Set[str],
         lines.append("")
 
     # 对国内域名排除自定义DNS部分
-    filtered_cn = cn_domains - set(custom_domain_dns.keys()) if custom_domain_dns else cn规则（共 {len(filtered_cn)} 个域名，已合并）")
+    filtered_cn = cn_domains - set(custom_domain_dns.keys()) if custom_domain_dns else cn_domains
+    grouped = group_domains_by_dns(filtered_cn, cn_dns)
+    lines.append("#" + "=" * 50)
+    lines.append(f"# 国内域名规则（共 {len(filtered_cn)} 个域名，已合并）")
     if custom_domain_dns and len(cn_domains) != len(filtered_cn):
         lines.append(f"# 已排除 {len(cn_domains) - len(filtered_cn)} 个自定义DNS域名")
     lines.append("#" + "=" * 50)
@@ -206,7 +207,7 @@ def generate_blacklist_config_grouped(cn_domains: Set[str],
     生成黑名单模式配置：
       - 国外域名走国外DNS，其余域名走国内DNS；
       - 自定义 DNS 规则优先覆盖；
-      - 将同一组 DNS 的域名合并输出。
+      - 同一组 DNS 的域名合并输出。
     :return: 生成的黑名单配置字符串。
     """
     lines = []
@@ -293,13 +294,7 @@ def main():
     logger.info(f"去重后国内域名数：{len(cn_domains)}")
     logger.info("正在对国外域名去重...")
     foreign_domains = remove_duplicates_in_list(foreign_domains)
-    logger.info(f"去重后国外域名数：{len(foreign_domains)}")
-
-    # 生成配置内容
-    logger.info("生成白名单模式配置...")
-    whitelist_config = generate_whitelist_config_grouped(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns)
-    logger.info("生成黑名单模式配置...")
-    blacklist_config = generate_blacklist_config_grouped(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns)
+    logger.info(f"去重后国外域名数：{len(foreign_domains)}, foreign_dns, custom_domain_dns)
 
     # 确保输出目录存在
     os.makedirs("dist", exist_ok=True)
