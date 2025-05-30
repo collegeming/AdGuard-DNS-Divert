@@ -9,11 +9,11 @@
 1. 加载配置文件（如果不存在则创建默认配置）；
 2. 通过 extract_domains 模块下载并解析国内外域名源，同时支持自定义域名文件；
 3. 读取自定义的 DNS 规则文件，格式示例如下：
-     domain1.com: dns1, dns2, dns3
-     # 注释行被忽略
+     domain1.com: dns1, dns2, dns3
+     # 注释行被忽略
 4. 对读取的域名进行去重，并根据指定的 DNS 服务器分组合并生成配置内容；
 5. 保存生成的配置文件：原始输出文件为 gn.txt（白名单模式）与 gw.txt（黑名单模式），
-   同时新增生成文件 whitelist_mode.txt 与 blacklist_mode.txt（内容可按需做额外处理）。
+   同时新增生成文件 whitelist_mode.txt 与 blacklist_mode.txt（内容可按需做额外处理）。
 6. 同时生成调试用的域名列表与自定义 DNS 文件。
 """
 
@@ -95,8 +95,8 @@ def process_sources(sources: List[str], custom_file: str = None) -> Set[str]:
 def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
     """
     读取自定义域名 DNS 规则，文件格式示例如下：
-       domain1.com: dns1, dns2, dns3
-       # 注释行
+     domain1.com: dns1, dns2, dns3
+     # 注释行
     :param file_path: 自定义 DNS 规则文件路径。
     :return: 自定义 DNS 规则的字典映射 {域名: [dns1, dns2, ...]}。
     """
@@ -152,9 +152,9 @@ def generate_whitelist_config_grouped(cn_domains: Set[str],
                                       custom_domain_dns: Dict[str, List[str]] = None) -> str:
     """
     生成白名单模式配置：
-      - 国内域名走国内DNS，其余域名走国外DNS；
-      - 自定义 DNS 规则优先输出；
-      - 同一组 DNS 的域名合并为一条配置。
+     - 国内域名走国内DNS，其余域名走国外DNS；
+     - 自定义 DNS 规则优先输出；
+     - 同一组 DNS 的域名合并为一条配置。
     :return: 生成的白名单配置字符串。
     """
     lines = []
@@ -205,14 +205,13 @@ def generate_blacklist_config_grouped(cn_domains: Set[str],
                                       custom_domain_dns: Dict[str, List[str]] = None) -> str:
     """
     生成黑名单模式配置：
-      - 国外域名走国外DNS，其余域名走国内DNS；
-      - 自定义 DNS 规则优先覆盖；
-      - 同一组 DNS 的域名合并输出。
+     - 国外域名走国外DNS，其余域名走国内DNS；
+     - 自定义 DNS 规则优先覆盖；
+     - 同一组 DNS 的域名合并输出。
     :return: 生成的黑名单配置字符串。
     """
     lines = []
-    lines.append("# AdGuard Home DNS 分流配置 - 黑名单模式")
-    lines.append(f"# 自动生成于 {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    lines.append("# AdGuard Home DNS 分('%Y-%m-%d %H:%M:%S')}")
     lines.append("# 黑名单：国外域名走国外DNS，其余走国内DNS")
     if custom_domain_dns:
         lines.append("# 包含自定义域名DNS规则")
@@ -294,7 +293,13 @@ def main():
     logger.info(f"去重后国内域名数：{len(cn_domains)}")
     logger.info("正在对国外域名去重...")
     foreign_domains = remove_duplicates_in_list(foreign_domains)
-    logger.info(f"去重后国外域名数：{len(foreign_domains)}, foreign_dns, custom_domain_dns)
+    logger.info(f"去重后国外域名数：{len(foreign_domains)}")
+
+    # 生成配置内容
+    logger.info("生成白名单模式配置...")
+    whitelist_config = generate_whitelist_config_grouped(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns)
+    logger.info("生成黑名单模式配置...")
+    blacklist_config = generate_blacklist_config_grouped(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns)
 
     # 确保输出目录存在
     os.makedirs("dist", exist_ok=True)
