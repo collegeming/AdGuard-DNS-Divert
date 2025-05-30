@@ -40,8 +40,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger("generate_config")
 
-# 定义生成时间时区，这里使用 Asia/Shanghai 时区
 def get_now_str() -> str:
+    """返回 Asia/Shanghai 时区下的当前时间字符串"""
     return datetime.datetime.now(ZoneInfo("Asia/Shanghai")).strftime('%Y-%m-%d %H:%M:%S')
 
 def load_config() -> dict:
@@ -104,7 +104,7 @@ def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-:
+            if ":" not in line:
                 logger.warning(f"第 {line_num} 行格式错误，缺少冒号: {line}")
                 continue
             parts = line.split(":", 1)
@@ -116,7 +116,7 @@ def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
             if not dns_servers:
                 logger.warning(f"第 {line_num} 行DNS服务器为空")
                 continue
-            if not extract_domains.is_valid_domain(domain) and domain not in ["cn","hk","mo","tw","jp","kr","sg"]:
+            if not extract_domains.is_valid_domain(domain) and domain not in ["cn", "hk", "mo", "tw", "jp", "kr", "sg"]:
                 logger.warning(f"第 {line_num} 行域名格式无效: {domain}")
                 continue
             custom_dns[domain] = dns_servers
@@ -124,22 +124,21 @@ def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
     logger.info(f"从自定义DNS文件中读取了 {len(custom_dns)} 条规则")
     return custom_dns
 
-def generate_whitelist_config(cn_domains, foreign_domains, cn_dns国内域名走国内DNS，其余走国外DNS）
+def generate_whitelist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns=None) -> str:
+    """
+    生成白名单模式配置（国内域名走国内DNS，其余走国外DNS）
     """
     config_lines = []
-    # 添加头部注释，显示当地时区时间
     config_lines.append("# AdGuard Home DNS 分流配置 - 白名单模式")
     config_lines.append(f"# 自动生成于 {get_now_str()}")
     config_lines.append("# 白名单模式：国内域名走国内DNS，其他走国外DNS")
     if custom_domain_dns:
         config_lines.append("# 包含自定义域名DNS规则")
     config_lines.append("")
-    # 添加默认上游DNS服务器（国外）
-    config_lines.append("# 默认上游（国外）")
+    config_lines.append("# 默认上游DNS服务器（国外）")
     for dns in foreign_dns:
         config_lines.append(dns)
     config_lines.append("")
-    # 添加自定义域名DNS规则（优先级最高）
     if custom_domain_dns:
         config_lines.append("#" + "=" * 50)
         config_lines.append(f"# 自定义域名DNS规则（共 {len(custom_domain_dns)} 个域名）")
@@ -149,7 +148,6 @@ def generate_whitelist_config(cn_domains, foreign_domains, cn_dns国内域名走
             dns_string = " ".join(dns_list)
             config_lines.append(f"[/{domain}/]{dns_string}")
         config_lines.append("")
-    # 对国内域名排除自定义DNS的域名
     cn_domains_filtered = cn_domains - set(custom_domain_dns.keys()) if custom_domain_dns else cn_domains
     config_lines.append("#" + "=" * 50)
     config_lines.append(f"# 国内域名规则（共 {len(cn_domains_filtered)} 个域名）")
@@ -166,19 +164,16 @@ def generate_blacklist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, 
     生成黑名单模式配置（国外域名走国外DNS，其余走国内DNS）
     """
     config_lines = []
-    # 添加头部注释，显示当地时区生成时间
     config_lines.append("# AdGuard Home DNS 分流配置 - 黑名单模式")
     config_lines.append(f"# 自动生成于 {get_now_str()}")
     config_lines.append("# 黑名单模式：国外域名走国外DNS，其余走国内DNS")
     if custom_domain_dns:
         config_lines.append("# 包含自定义域名DNS规则")
     config_lines.append("")
-    # 添加默认上游DNS服务器（国内）
     config_lines.append("# 默认上游DNS服务器（国内）")
     for dns in cn_dns:
         config_lines.append(dns)
     config_lines.append("")
-    # 添加自定义域名DNS规则（优先级最高）
     if custom_domain_dns:
         config_lines.append("#" + "=" * 50)
         config_lines.append(f"# 自定义域名DNS规则（共 {len(custom_domain_dns)} 个域名）")
@@ -188,7 +183,6 @@ def generate_blacklist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, 
             dns_string = " ".join(dns_list)
             config_lines.append(f"[/{domain}/]{dns_string}")
         config_lines.append("")
-    # 对国外域名排除自定义DNS的域名
     foreign_domains_filtered = foreign_domains - set(custom_domain_dns.keys()) if custom_domain_dns else foreign_domains
     config_lines.append("#" + "=" * 50)
     config_lines.append(f"# 国外域名规则（共 {len(foreign_domains_filtered)} 个域名）")
@@ -210,57 +204,46 @@ def remove_duplicates_in_list(domains):
 
 def main():
     """主函数"""
-    # 加载配置
     config = load_config()
-    # 设置默认DNS服务器
     default_cn_dns = ["https://doh.pub/dns-query", "https://dns.alidns.com/dns-query"]
     default_foreign_dns = ["https://1.1.1.1/dns-query", "https://8.8.8.8/dns-query"]
     cn_dns = extract_domains.read_dns_servers(os.path.join("config", "cn_dns.txt"), default_cn_dns)
     foreign_dns = extract_domains.read_dns_servers(os.path.join("config", "foreign_dns.txt"), default_foreign_dns)
-    # 读取自定义域名DNS配置
     custom_domain_dns = read_custom_domain_dns(os.path.join("config", "custom_domain_dns.txt"))
     logger.info(f"使用国内DNS服务器: {cn_dns}")
     logger.info(f"使用国外DNS服务器: {foreign_dns}")
     logger.info(f"自定义域名DNS规则数: {len(custom_domain_dns)}")
-    # 获取域名源
     cn_sources = config.get("sources", {}).get("cn_domains", [])
     foreign_sources = config.get("sources", {}).get("foreign_domains", [])
     logger.info("开始提取国内域名...")
     cn_domains = process_sources(cn_sources, os.path.join("config", "custom_cn_domains.txt"))
     logger.info("开始提取国外域名...")
     foreign_domains = process_sources(foreign_sources, os.path.join("config", "custom_foreign_domains.txt"))
-    # 对国内与国外域名列表去重
     logger.info("对国内域名列表进行去重...")
     cn_domains = remove_duplicates_in_list(cn_domains)
     logger.info(f"去重后国内域名数量: {len(cn_domains)}")
     logger.info("对国外域名列表进行去重...")
     foreign_domains = remove_duplicates_in_list(foreign_domains)
     logger.info(f"去重后国外域名数量: {len(foreign_domains)}")
-    # 生成配置文件
     logger.info("生成白名单模式配置文件...")
     whitelist_config = generate_whitelist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns)
     logger.info("生成黑名单模式配置文件...")
     blacklist_config = generate_blacklist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns)
-    # 确保输出目录存在
     os.makedirs("dist", exist_ok=True)
-    # 保留原有配置文件 gn.txt（白名单模式）和 gw.txt（黑名单模式）
     with open(os.path.join("dist", "gn.txt"), "w", encoding="utf-8") as f:
         f.write(whitelist_config)
     with open(os.path.join("dist", "gw.txt"), "w", encoding="utf-8") as f:
         f.write(blacklist_config)
-    # 同时输出新的 whitelist_mode.txt 和 blacklist_mode.txt
     with open(os.path.join("dist", "whitelist_mode.txt"), "w", encoding="utf-8") as f:
         f.write(whitelist_config)
     with open(os.path.join("dist", "blacklist_mode.txt"), "w", encoding="utf-8") as f:
         f.write(blacklist_config)
-    # 保存调试用的域名列表
     with open(os.path.join("dist", "cn_domains.txt"), "w", encoding="utf-8") as f:
         for domain in sorted(cn_domains):
             f.write(f"{domain}\n")
     with open(os.path.join("dist", "foreign_domains.txt"), "w", encoding="utf-8") as f:
         for domain in sorted(foreign_domains):
             f.write(f"{domain}\n")
-    # 保存调试用的自定义域名DNS规则
     if custom_domain_dns:
         with open(os.path.join("dist", "custom_domain_dns_debug.txt"), "w", encoding="utf-8") as f:
             for domain, dns_list in sorted(custom_domain_dns.items()):
@@ -269,7 +252,6 @@ def main():
     logger.info(f"白名单模式：共 {len(cn_domains)} 个国内域名")
     logger.info(f"黑名单模式：共 {len(foreign_domains)} 个国外域名")
     logger.info(f"自定义域名DNS：共 {len(custom_domain_dns)} 个域名")
-    # 统计自定义DNS规则覆盖情况
     if custom_domain_dns:
         cn_overridden = len(cn_domains.intersection(set(custom_domain_dns.keys())))
         foreign_overridden = len(foreign_domains.intersection(set(custom_domain_dns.keys())))
