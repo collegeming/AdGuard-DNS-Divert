@@ -24,6 +24,7 @@ import sys
 import json
 import logging
 import datetime
+from zoneinfo import ZoneInfo
 from typing import Dict, List, Set
 from collections import defaultdict
 
@@ -38,6 +39,10 @@ logging.basicConfig(
     handlers=[logging.StreamHandler(sys.stdout)]
 )
 logger = logging.getLogger("generate_config")
+
+# 定义生成时间时区，这里使用 Asia/Shanghai 时区
+def get_now_str() -> str:
+    return datetime.datetime.now(ZoneInfo("Asia/Shanghai")).strftime('%Y-%m-%d %H:%M:%S')
 
 def load_config() -> dict:
     """加载配置文件，如果不存在则自动创建默认配置"""
@@ -99,7 +104,7 @@ def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-            if ":" not in line:
+:
                 logger.warning(f"第 {line_num} 行格式错误，缺少冒号: {line}")
                 continue
             parts = line.split(":", 1)
@@ -119,20 +124,18 @@ def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
     logger.info(f"从自定义DNS文件中读取了 {len(custom_dns)} 条规则")
     return custom_dns
 
-def generate_whitelist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns=None) -> str:
-    """
-    生成白名单模式配置（国内域名走国内DNS，其余走国外DNS）
+def generate_whitelist_config(cn_domains, foreign_domains, cn_dns国内域名走国内DNS，其余走国外DNS）
     """
     config_lines = []
-    # 添加头部注释
+    # 添加头部注释，显示当地时区时间
     config_lines.append("# AdGuard Home DNS 分流配置 - 白名单模式")
-    config_lines.append(f"# 自动生成于 {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    config_lines.append(f"# 自动生成于 {get_now_str()}")
     config_lines.append("# 白名单模式：国内域名走国内DNS，其他走国外DNS")
     if custom_domain_dns:
         config_lines.append("# 包含自定义域名DNS规则")
     config_lines.append("")
     # 添加默认上游DNS服务器（国外）
-    config_lines.append("# 默认上游DNS服务器（国外）")
+    config_lines.append("# 默认上游（国外）")
     for dns in foreign_dns:
         config_lines.append(dns)
     config_lines.append("")
@@ -163,9 +166,9 @@ def generate_blacklist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, 
     生成黑名单模式配置（国外域名走国外DNS，其余走国内DNS）
     """
     config_lines = []
-    # 添加头部注释
+    # 添加头部注释，显示当地时区生成时间
     config_lines.append("# AdGuard Home DNS 分流配置 - 黑名单模式")
-    config_lines.append(f"# 自动生成于 {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    config_lines.append(f"# 自动生成于 {get_now_str()}")
     config_lines.append("# 黑名单模式：国外域名走国外DNS，其余走国内DNS")
     if custom_domain_dns:
         config_lines.append("# 包含自定义域名DNS规则")
@@ -226,21 +229,21 @@ def main():
     cn_domains = process_sources(cn_sources, os.path.join("config", "custom_cn_domains.txt"))
     logger.info("开始提取国外域名...")
     foreign_domains = process_sources(foreign_sources, os.path.join("config", "custom_foreign_domains.txt"))
-    # 分别对国内与国外域名列表去重
+    # 对国内与国外域名列表去重
     logger.info("对国内域名列表进行去重...")
     cn_domains = remove_duplicates_in_list(cn_domains)
     logger.info(f"去重后国内域名数量: {len(cn_domains)}")
     logger.info("对国外域名列表进行去重...")
     foreign_domains = remove_duplicates_in_list(foreign_domains)
     logger.info(f"去重后国外域名数量: {len(foreign_domains)}")
-    # 生成白名单和黑名单配置
+    # 生成配置文件
     logger.info("生成白名单模式配置文件...")
     whitelist_config = generate_whitelist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns)
     logger.info("生成黑名单模式配置文件...")
     blacklist_config = generate_blacklist_config(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns)
     # 确保输出目录存在
     os.makedirs("dist", exist_ok=True)
-    # 保留原有的 gn.txt 和 gw.txt 配置文件
+    # 保留原有配置文件 gn.txt（白名单模式）和 gw.txt（黑名单模式）
     with open(os.path.join("dist", "gn.txt"), "w", encoding="utf-8") as f:
         f.write(whitelist_config)
     with open(os.path.join("dist", "gw.txt"), "w", encoding="utf-8") as f:
