@@ -14,6 +14,13 @@ import datetime
 from typing import Dict, List
 from collections import defaultdict
 
+# Python 3.9+ 标准库 zoneinfo，若为 Python 3.8- 请使用 pytz
+try:
+    from zoneinfo import ZoneInfo
+    CN_TZ = ZoneInfo("Asia/Shanghai")
+except ImportError:
+    raise RuntimeError("请使用 Python 3.9 及以上，或用 pytz 兼容代码")
+
 # 避免循环导入
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import extract_domains
@@ -22,11 +29,13 @@ import extract_domains
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(sys.stdout)
-    ]
+    handlers=[logging.StreamHandler(sys.stdout)]
 )
 logger = logging.getLogger('generate_config')
+
+def now_beijing():
+    """返回北京时间字符串"""
+    return datetime.datetime.now(CN_TZ).strftime('%Y-%m-%d %H:%M:%S')
 
 def load_config() -> dict:
     """加载配置文件"""
@@ -114,7 +123,7 @@ def group_domains_by_dns(domain_set, dns_list):
 def generate_whitelist_config_single(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns=None):
     config_lines = []
     config_lines.append("# AdGuard Home DNS 分流配置 - 白名单模式（逐条规则）")
-    config_lines.append(f"# 自动生成于 {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    config_lines.append(f"# 自动生成于 {now_beijing()}")
     config_lines.append("# 白名单模式：命中国内域名走国内DNS，其他走国外DNS")
     if custom_domain_dns:
         config_lines.append("# 包含自定义域名DNS规则")
@@ -144,7 +153,7 @@ def generate_whitelist_config_single(cn_domains, foreign_domains, cn_dns, foreig
 def generate_blacklist_config_single(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns=None):
     config_lines = []
     config_lines.append("# AdGuard Home DNS 分流配置 - 黑名单模式（逐条规则）")
-    config_lines.append(f"# 自动生成于 {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    config_lines.append(f"# 自动生成于 {now_beijing()}")
     config_lines.append("# 黑名单模式：命中国外域名走国外DNS，其他走国内DNS")
     if custom_domain_dns:
         config_lines.append("# 包含自定义域名DNS规则")
@@ -174,7 +183,7 @@ def generate_blacklist_config_single(cn_domains, foreign_domains, cn_dns, foreig
 def generate_whitelist_config_grouped(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns=None):
     config_lines = []
     config_lines.append("# AdGuard Home DNS 分流配置 - 白名单模式")
-    config_lines.append(f"# 自动生成于 {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    config_lines.append(f"# 自动生成于 {now_beijing()}")
     config_lines.append("# 白名单模式：命中国内域名走国内DNS，其他走国外DNS")
     if custom_domain_dns:
         config_lines.append("# 包含自定义域名DNS规则")
@@ -209,7 +218,7 @@ def generate_whitelist_config_grouped(cn_domains, foreign_domains, cn_dns, forei
 def generate_blacklist_config_grouped(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns=None):
     config_lines = []
     config_lines.append("# AdGuard Home DNS 分流配置 - 黑名单模式")
-    config_lines.append(f"# 自动生成于 {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    config_lines.append(f"# 自动生成于 {now_beijing()}")
     config_lines.append("# 黑名单模式：命中国外域名走国外DNS，其他走国内DNS")
     if custom_domain_dns:
         config_lines.append("# 包含自定义域名DNS规则")
