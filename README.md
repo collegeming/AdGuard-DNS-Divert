@@ -54,10 +54,12 @@ Edit and save them directly through GitHub's web interface.
 
 This project generates two types of diversion rules; you can choose based on your needs:
 
-| 文件 | File | 描述 | Description |
+| 文件 | File | 描述 | 链接 |
 |:---|:---|:---|:---|
 | `gw_grouped.txt` | `gw_grouped.txt` | **命中列表中域名的请求走国外 DNS。** | **https://github.com/qq5460168/AdGuard-DNS-Divert/raw/refs/heads/main/dist/gw_grouped.txt** |
-| `gn_grouped.txt` | `gn_grouped.txt` | **命中列表中域名的请求走国内 DNS。** | **[Domains matching the list will be resolved via domestic DNS.](https://github.com/qq5460168/AdGuard-DNS-Divert/raw/refs/heads/main/dist/gn_grouped.txt)** |
+| `gw.txt` | `gw.txt` | **命中列表中域名的请求走国外 DNS。** | **https://raw.githubusercontent.com/qq5460168/AdGuard-DNS-Divert/refs/heads/main/dist/gw.txt** |
+| `gn_grouped.txt` | `gn_grouped.txt` | **命中列表中域名的请求走国内 DNS。** | **https://github.com/qq5460168/AdGuard-DNS-Divert/raw/refs/heads/main/dist/gn_grouped.txt** |
+| `gn.txt` | `gn.txt` | **命中列表中域名的请求走国内 DNS。** | **https://github.com/qq5460168/AdGuard-DNS-Divert/raw/refs/heads/main/dist/gn.txt** |
 
 **根据不同需求选择合适的模式。**  
 **Choose the appropriate mode based on your needs.**
