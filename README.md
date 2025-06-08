@@ -56,8 +56,8 @@ This project generates two types of diversion rules; you can choose based on you
 
 | 文件 | File | 描述 | Description |
 |:---|:---|:---|:---|
-| `blacklist_mode.txt` | `blacklist_mode.txt` | **命中列表中域名的请求走国外 DNS。** | **Domains matching the list will be resolved via foreign DNS.** |
-| `whitelist_mode.txt` | `whitelist_mode.txt` | **命中列表中域名的请求走国内 DNS。** | **Domains matching the list will be resolved via domestic DNS.** |
+| `gw_grouped.txt` | `gw_grouped.txt` | **命中列表中域名的请求走国外 DNS。** | **https://github.com/qq5460168/AdGuard-DNS-Divert/raw/refs/heads/main/dist/gw_grouped.txt** |
+| `gn_grouped.txt` | `gn_grouped.txt` | **命中列表中域名的请求走国内 DNS。** | **[Domains matching the list will be resolved via domestic DNS.](https://github.com/qq5460168/AdGuard-DNS-Divert/raw/refs/heads/main/dist/gn_grouped.txt)** |
 
 **根据不同需求选择合适的模式。**  
 **Choose the appropriate mode based on your needs.**
