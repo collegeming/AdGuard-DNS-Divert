@@ -57,7 +57,7 @@ This project generates two types of diversion rules; you can choose based on you
 | 文件 | File | 描述 | 链接 |
 |:---|:---|:---|:---|
 | [`gw_grouped.txt`](dist/gw_grouped.txt) | `精简规则减小文件大小` | **命中列表中域名的请求走国外 DNS。** | **[国外域名](https://github.com/qq5460168/AdGuard-DNS-Divert/raw/refs/heads/main/dist/gw_grouped.txt)** |
-| [`gw.txt`(dist/gw.txt) ]| `逐条规则文件大清晰明了` | **命中列表中域名的请求走国外 DNS。** | **[国外域名](https://raw.githubusercontent.com/qq5460168/AdGuard-DNS-Divert/refs/heads/main/dist/gw.txt)** |
+| [`gw.txt`](dist/gw.txt)| `逐条规则文件大清晰明了` | **命中列表中域名的请求走国外 DNS。** | **[国外域名](https://raw.githubusercontent.com/qq5460168/AdGuard-DNS-Divert/refs/heads/main/dist/gw.txt)** |
 |[ `gn_grouped.txt`](dist/gn_grouped.txt) | `精简规则减小文件大小` | **命中列表中域名的请求走国内 DNS。** | **[国内域名](https://github.com/qq5460168/AdGuard-DNS-Divert/raw/refs/heads/main/dist/gn_grouped.txt)** |
 |[ `gn.txt`](dist/gw.txt) | `逐条规则文件大清晰明了` | **命中列表中域名的请求走国内 DNS。** | **[国内域名](https://github.com/qq5460168/AdGuard-DNS-Divert/raw/refs/heads/main/dist/gn.txt)** |
 
