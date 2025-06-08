@@ -38,10 +38,10 @@ Edit the following files under the `config/` directory in your forked repository
 | 文件 | File | 描述 | Description |
 |:---|:---|:---|:---|
 | [`config.json`](config/config.json) | [`config.json`](config/config.json) | 主配置文件，设置行为和生成参数 | Main config file: control behaviors and output settings |
-| [`cn_dns.txt`](config/cn_dns.txt) | [`cn_dns.txt`](config/cn_dns.txt) | 国内 DNS 服务器列表 | List of domestic (CN) DNS servers |
-| [`foreign_dns.txt`](config/foreign_dns.txt) | [`foreign_dns.txt`](config/foreign_dns.txt) | 国外 DNS 服务器列表 | List of foreign DNS servers |
-| [`custom_cn_domains.txt`](config/custom_cn_domains.txt) | [`custom_cn_domains.txt`](config/custom_cn_domains.txt) | 自定义始终走国内 DNS 的域名列表 | Custom list of domains always resolved via domestic DNS |
-| [`custom_foreign_domains.txt`](config/custom_foreign_domains.txt) | [`custom_foreign_domains.txt`](config/custom_foreign_domains.txt) | 自定义始终走国外 DNS 的域名列表 | Custom list of domains always resolved via foreign DNS |
+| [`cn_dns.txt`](config/cn_dns.txt) | [`国内DNS`](config/cn_dns.txt) | 国内 DNS 服务器列表 | List of domestic (CN) DNS servers |
+| [`foreign_dns.txt`](config/foreign_dns.txt) | [`国外DNS`](config/foreign_dns.txt) | 国外 DNS 服务器列表 | List of foreign DNS servers |
+| [`custom_cn_domains.txt`](config/custom_cn_domains.txt) | [`国内域名`](config/custom_cn_domains.txt) | 自定义始终走国内 DNS 的域名列表 | Custom list of domains always resolved via domestic DNS |
+| [`custom_foreign_domains.txt`](config/custom_foreign_domains.txt) | [`国外域名`](config/custom_foreign_domains.txt) | 自定义始终走国外 DNS 的域名列表 | Custom list of domains always resolved via foreign DNS |
 
 可以直接在 GitHub 上在线编辑并保存。  
 Edit and save them directly through GitHub's web interface.
