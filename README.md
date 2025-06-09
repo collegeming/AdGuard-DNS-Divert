@@ -3,6 +3,8 @@
   <!-- 访客计数，点击跳转到仓库主页 -->
 你是第 <img src="https://profile-counter.glitch.me/qq5460168-AdGuard-DNS-Divert/count.svg" alt="访客计数" /> 位访客
 </div>
+
+
 AdGuard DNS Divert 项目为 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) 用户提供的一套**基于域名分类分流国内外 DNS**的轻量级方案，提升访问速度、保护隐私，并优化解析体验。
 
 The AdGuard DNS Divert project provides a lightweight solution for [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) users to **automatically route DNS queries based on domain categorization (domestic/foreign)**, improving speed, privacy, and DNS resolution efficiency.
