@@ -109,6 +109,9 @@ Thanks to all these projects for providing open rule resources!
 
 Special thanks to the following projects and developers:
 
+
+- [cs3306](https://github.com/cs3306/adguard-dns-divert)
+
 - [ACL4SSR](https://github.com/ACL4SSR/ACL4SSR)
 - [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)
 - [felixonmars/dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list)
