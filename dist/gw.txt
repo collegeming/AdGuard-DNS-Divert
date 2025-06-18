@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 黑名单模式（逐条规则）
-# 自动生成于 2025-06-17 08:58:40
+# 自动生成于 2025-06-18 08:58:41
 # 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
 # 包含自定义域名DNS规则
 
@@ -19,7 +19,7 @@ https://doh-home.onedns.net/dns-query
 [/store.steampowered.com/]https://185.222.222.222/dns-query https://45.11.45.11/dns-query
 
 #==================================================
-# 国外域名规则（共 32801 个域名，逐条规则）
+# 国外域名规则（共 32802 个域名，逐条规则）
 # 已排除 2 个自定义DNS域名
 #==================================================
 [/000webhost.com/]https://dns.916899380.xyz/dns-query https://cc.ivws.cloudns.be:2053/dns-query
@@ -30428,6 +30428,7 @@ https://doh-home.onedns.net/dns-query
 [/w.wiki/]https://dns.916899380.xyz/dns-query https://cc.ivws.cloudns.be:2053/dns-query
 [/w0512.com/]https://dns.916899380.xyz/dns-query https://cc.ivws.cloudns.be:2053/dns-query
 [/w3.org/]https://dns.916899380.xyz/dns-query https://cc.ivws.cloudns.be:2053/dns-query
+[/w3s.link/]https://dns.916899380.xyz/dns-query https://cc.ivws.cloudns.be:2053/dns-query
 [/w3schools.com/]https://dns.916899380.xyz/dns-query https://cc.ivws.cloudns.be:2053/dns-query
 [/w6un.com/]https://dns.916899380.xyz/dns-query https://cc.ivws.cloudns.be:2053/dns-query
 [/wa.me/]https://dns.916899380.xyz/dns-query https://cc.ivws.cloudns.be:2053/dns-query
