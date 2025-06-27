@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 白名单模式（逐条规则）
-# 自动生成于 2025-06-28 01:05:03
+# 自动生成于 2025-06-28 01:18:49
 # 白名单模式：命中国内域名走国内DNS，其他走国外DNS
 # 包含自定义域名DNS规则
 
@@ -12,6 +12,9 @@ https://cc.ivws.cloudns.be:2053/dns-query
 #==================================================
 # 自定义域名DNS规则（逐条规则输出）
 #==================================================
+[/*.360.cn/]https://doh.360.cn/dns-query
+[/*.360safe.com/]https://doh.360.cn/dns-query
+[/*.360totalsecurity.com/]https://doh.360.cn/dns-query
 [/*.alibaba.com/]https://dns.alidns.com/dns-query
 [/*.alicdn.com/]https://dns.alidns.com/dns-query
 [/*.alipay.com/]https://dns.alidns.com/dns-query
@@ -30,9 +33,11 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/*.ixigua.com/]180.184.1.1 180.184.2.2
 [/*.ku6.com/]https://dns.alidns.com/dns-query
 [/*.pstatp.com/]180.184.1.1 180.184.2.2
+[/*.qihoo.com/]https://doh.360.cn/dns-query
 [/*.qq.com/]https://doh.pub/dns-query
 [/*.qqmusic.com/]https://doh.pub/dns-query
 [/*.snssdk.com/]180.184.1.1 180.184.2.2
+[/*.so.com/]https://doh.360.cn/dns-query
 [/*.taobao.com/]https://dns.alidns.com/dns-query
 [/*.tencent.com/]https://doh.pub/dns-query
 [/*.tmall.com/]https://dns.alidns.com/dns-query
@@ -43,6 +48,9 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/*.xiami.com/]https://dns.alidns.com/dns-query
 [/*.ykimg.com/]https://dns.alidns.com/dns-query
 [/*.youku.com/]https://dns.alidns.com/dns-query
+[/360.cn/]https://doh.360.cn/dns-query
+[/360safe.com/]https://doh.360.cn/dns-query
+[/360totalsecurity.com/]https://doh.360.cn/dns-query
 [/aliyun.com/]https://dns.alidns.com/dns-query
 [/as174.de/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
 [/baidu.com/]180.76.76.76 2400:da00::6666
@@ -57,7 +65,9 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/hk/]https://dns.hk-resolver.com/dns-query
 [/im.qq.com/]https://doh.pub/dns-query
 [/jp/]https://dns.google/dns-query
+[/qihoo.com/]https://doh.360.cn/dns-query
 [/qqgame.com/]https://doh.pub/dns-query
+[/so.com/]https://doh.360.cn/dns-query
 [/steamcommunity.com/]https://185.222.222.222/dns-query https://45.11.45.11/dns-query
 [/store.steampowered.com/]https://185.222.222.222/dns-query https://45.11.45.11/dns-query
 [/tenpay.com/]https://doh.pub/dns-query
@@ -67,8 +77,8 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/youku.com/]https://dns.alidns.com/dns-query
 
 #==================================================
-# 国内域名规则（共 120195 个域名，逐条规则）
-# 已排除 30 个自定义DNS域名（含通配符模糊覆盖）
+# 国内域名规则（共 120190 个域名，逐条规则）
+# 已排除 35 个自定义DNS域名（含通配符模糊覆盖）
 #==================================================
 [/0.zone/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/00.net/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
@@ -3999,7 +4009,6 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/360qikan.net/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/360qnw.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/360qws.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
-[/360safe.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/360safedns.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/360sdn.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/360shouji.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
@@ -4024,7 +4033,6 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/360tianma.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/360tong.net/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/360top.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
-[/360totalsecurity.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/360tpcdn.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/360tres.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/360tuan.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
@@ -31222,7 +31230,6 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/dogmr.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/dogwhere.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/dogyun.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
-[/doh.360.cn/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/doh.plus/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/doh.pub/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/dohai.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
@@ -80164,7 +80171,6 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/qihejy.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/qihepaimai.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/qihihi.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
-[/qihoo.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/qihoo.net/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/qihu.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/qihu.org/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
@@ -89878,7 +89884,6 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/snzhz.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/snzsxh.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/so.car/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
-[/so.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/so03290koaq.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/so03300koaq.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
 [/so04060koaq.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://120.53.53.53/dns-query https://doh-home.onedns.net/dns-query
