@@ -27,7 +27,10 @@ as174.de: https://dns.alidns.com/dns-query, https://doh.360.cn/dns-query
 bing.com: https://dns.alidns.com/dns-query, https://doh.360.cn/dns-query
 
 # 腾讯系域名组合（含通配符，需程序支持）
-im.qq.com/*.tencent.com/*.weixin.com/weixin.qq.com/*.qqmusic.com/*.video.qq.com/*.itravelqq.com/*.qq.com: https://doh.pub/dns-quer
+im.qq.com/*.tencent.com/*.weixin.com/weixin.qq.com/*.qqmusic.com/*.video.qq.com/*.itravelqq.com/*.qq.com: https://doh.pub/dns-query
 
-#阿里系域名组合（含通配符，需程序支持）
-aliyun.com/.aliyun.com/.alibaba.com/.taobao.com/.tmall.com/.alicdn.com/.alipay.com/.xiami.com/.aliwangwang.com: https://dns.alidns.com/dns-query
+# 阿里系域名组合（含通配符，需程序支持）
+aliyun.com/*.aliyun.com/*.alibaba.com/*.taobao.com/*.tmall.com/*.alicdn.com/*.alipay.com/*.xiami.com/*.aliwangwang.com: https://dns.alidns.com/dns-query
+
+# 字节系域名组合（含通配符，需程序支持）
+bytedance.com/*.bytedance.com/*.byteimg.com/*.toutiao.com/*.douyin.com/*.iesdouyin.com/*.snssdk.com/*.pstatp.com/*.ixigua.com: https://doh.360.cn/dns-query
