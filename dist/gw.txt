@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 黑名单模式（逐条规则）
-# 自动生成于 2025-06-28 00:45:56
+# 自动生成于 2025-06-28 00:52:02
 # 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
 # 包含自定义域名DNS规则
 
@@ -61,8 +61,8 @@ https://doh-home.onedns.net/dns-query
 [/youku.com/]https://dns.alidns.com/dns-query
 
 #==================================================
-# 国外域名规则（共 32797 个域名，逐条规则）
-# 已排除 7 个自定义DNS域名
+# 国外域名规则（共 32793 个域名，逐条规则）
+# 已排除 11 个自定义DNS域名（含通配符模糊覆盖）
 #==================================================
 [/000webhost.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/01.org/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -12824,7 +12824,6 @@ https://doh-home.onedns.net/dns-query
 [/gotrusted.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/gotv/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/gotw.ca/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/gouhuo.qq.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/gouri.xyz/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/gov/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/gov.taipei/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -24436,7 +24435,6 @@ https://doh-home.onedns.net/dns-query
 [/ro89.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/road-crew.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/roadshow.hk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/roblox.qq.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/robobat.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/roboforex.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/roborecall.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -24454,7 +24452,6 @@ https://doh-home.onedns.net/dns-query
 [/rocksdb.org/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/rocksextube.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/rockstargames.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/roco.qq.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/rodbaston.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/roe.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/roehampton-online.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -30784,7 +30781,6 @@ https://doh-home.onedns.net/dns-query
 [/wetplace.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/wetpussygames.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/wetsextube.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/wetv.qq.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/weverse.io/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/wexiaobo.org/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/weymouth.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
