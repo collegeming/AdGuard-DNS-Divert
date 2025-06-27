@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-配置文件生成脚本
-用于生成 AdGuard Home 的配置文件，包括白名单模式和黑名单模式
-"""
-
 import os
 import sys
 import json
@@ -13,6 +8,7 @@ import logging
 import datetime
 from typing import Dict, List, Tuple
 from collections import defaultdict
+import fnmatch
 
 # Python 3.9+ 标准库 zoneinfo，若为 Python 3.8- 请使用 pytz
 try:
@@ -21,11 +17,9 @@ try:
 except ImportError:
     raise RuntimeError("请使用 Python 3.9 及以上，或用 pytz 兼容代码")
 
-# 避免循环导入
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import extract_domains
 
-# 配置日志
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -34,11 +28,9 @@ logging.basicConfig(
 logger = logging.getLogger('generate_config')
 
 def now_beijing():
-    """返回北京时间字符串"""
     return datetime.datetime.now(CN_TZ).strftime('%Y-%m-%d %H:%M:%S')
 
 def load_config() -> dict:
-    """加载配置文件"""
     config_path = os.path.join('config', 'config.json')
     if not os.path.exists(config_path):
         config = {
@@ -67,7 +59,6 @@ def load_config() -> dict:
     return config
 
 def process_sources(sources, custom_file=None) -> set:
-    """处理源列表，下载并提取域名"""
     all_domains = set()
     for source in sources:
         content = extract_domains.download_file(source)
@@ -82,11 +73,6 @@ def process_sources(sources, custom_file=None) -> set:
     return all_domains
 
 def read_custom_domain_dns(file_path: str):
-    """
-    返回自定义DNS规则的分组列表和域名到dns的映射。
-    分组列表: [([domain1, domain2, ...], [dns1, dns2, ...]), ...]
-    域名到dns的映射: {domain: [dns1, dns2, ...], ...}
-    """
     grouped_rules = []
     domain_dns_map = {}
     if not os.path.exists(file_path):
@@ -108,7 +94,6 @@ def read_custom_domain_dns(file_path: str):
             domains = [d.strip() for d in domains_part.split('/') if d.strip()]
             grouped_rules.append((domains, dns_servers))
             for domain in domains:
-                # 通配符支持，直接放行
                 domain_dns_map[domain] = dns_servers
                 logger.info(f"添加自定义DNS规则: {domain} -> {dns_servers}")
     logger.info(f"从自定义DNS文件中读取了 {len(domain_dns_map)} 条规则（{len(grouped_rules)} 组）")
@@ -121,7 +106,27 @@ def group_domains_by_dns(domain_set, dns_list):
         result[dns_tuple].append(domain)
     return result
 
-def generate_whitelist_config_single(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_map=None):
+def wildcard_matches(domain: str, patterns: List[str]) -> bool:
+    """检查 domain 是否被 patterns 里的通配符或精确域名匹配"""
+    for pat in patterns:
+        if pat.startswith('*.'):
+            base = pat[2:]
+            # 排除自身和所有子域（abc.com 及 *.abc.com、foo.abc.com等）
+            if domain == base or domain.endswith('.' + base):
+                return True
+        elif '*' in pat:
+            if fnmatch.fnmatch(domain, pat):
+                return True
+        else:
+            if domain == pat:
+                return True
+    return False
+
+def filter_domains(domains: set, custom_patterns: List[str]) -> set:
+    """返回未被自定义规则（含通配符）覆盖的域名"""
+    return {d for d in domains if not wildcard_matches(d, custom_patterns)}
+
+def generate_whitelist_config_single(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_map=None, custom_patterns=None):
     config_lines = []
     config_lines.append("# AdGuard Home DNS 分流配置 - 白名单模式（逐条规则）")
     config_lines.append(f"# 自动生成于 {now_beijing()}")
@@ -140,17 +145,18 @@ def generate_whitelist_config_single(cn_domains, foreign_domains, cn_dns, foreig
         for domain, dns_list in sorted(custom_domain_dns_map.items()):
             config_lines.append(f"[/{domain}/]{' '.join(dns_list)}")
         config_lines.append("")
-    cn_domains_filtered = cn_domains - set(custom_domain_dns_map.keys()) if custom_domain_dns_map else cn_domains
+    # 通配符模糊去重
+    cn_domains_filtered = filter_domains(cn_domains, custom_patterns) if custom_patterns else cn_domains
     config_lines.append("#" + "="*50)
     config_lines.append(f"# 国内域名规则（共 {len(cn_domains_filtered)} 个域名，逐条规则）")
     if custom_domain_dns_map and len(cn_domains) != len(cn_domains_filtered):
-        config_lines.append(f"# 已排除 {len(cn_domains) - len(cn_domains_filtered)} 个自定义DNS域名")
+        config_lines.append(f"# 已排除 {len(cn_domains) - len(cn_domains_filtered)} 个自定义DNS域名（含通配符模糊覆盖）")
     config_lines.append("#" + "="*50)
     for domain in sorted(cn_domains_filtered):
         config_lines.append(f"[/{domain}/]{' '.join(cn_dns)}")
     return '\n'.join(config_lines)
 
-def generate_blacklist_config_single(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_map=None):
+def generate_blacklist_config_single(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_map=None, custom_patterns=None):
     config_lines = []
     config_lines.append("# AdGuard Home DNS 分流配置 - 黑名单模式（逐条规则）")
     config_lines.append(f"# 自动生成于 {now_beijing()}")
@@ -169,17 +175,17 @@ def generate_blacklist_config_single(cn_domains, foreign_domains, cn_dns, foreig
         for domain, dns_list in sorted(custom_domain_dns_map.items()):
             config_lines.append(f"[/{domain}/]{' '.join(dns_list)}")
         config_lines.append("")
-    foreign_domains_filtered = foreign_domains - set(custom_domain_dns_map.keys()) if custom_domain_dns_map else foreign_domains
+    foreign_domains_filtered = filter_domains(foreign_domains, custom_patterns) if custom_patterns else foreign_domains
     config_lines.append("#" + "="*50)
     config_lines.append(f"# 国外域名规则（共 {len(foreign_domains_filtered)} 个域名，逐条规则）")
     if custom_domain_dns_map and len(foreign_domains) != len(foreign_domains_filtered):
-        config_lines.append(f"# 已排除 {len(foreign_domains) - len(foreign_domains_filtered)} 个自定义DNS域名")
+        config_lines.append(f"# 已排除 {len(foreign_domains) - len(foreign_domains_filtered)} 个自定义DNS域名（含通配符模糊覆盖）")
     config_lines.append("#" + "="*50)
     for domain in sorted(foreign_domains_filtered):
         config_lines.append(f"[/{domain}/]{' '.join(foreign_dns)}")
     return '\n'.join(config_lines)
 
-def generate_whitelist_config_grouped(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_grouped=None, custom_domain_dns_map=None):
+def generate_whitelist_config_grouped(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_grouped=None, custom_domain_dns_map=None, custom_patterns=None):
     config_lines = []
     config_lines.append("# AdGuard Home DNS 分流配置 - 白名单模式")
     config_lines.append(f"# 自动生成于 {now_beijing()}")
@@ -200,8 +206,7 @@ def generate_whitelist_config_grouped(cn_domains, foreign_domains, cn_dns, forei
             dns_str = ' '.join(dns_list)
             config_lines.append(f"[/{domains_str}/] {dns_str}")
         config_lines.append("")
-    custom_domains_set = set(custom_domain_dns_map.keys()) if custom_domain_dns_map else set()
-    cn_domains_filtered = cn_domains - custom_domains_set
+    cn_domains_filtered = filter_domains(cn_domains, custom_patterns) if custom_patterns else cn_domains
     grouped = group_domains_by_dns(cn_domains_filtered, cn_dns)
     config_lines.append("#" + "="*50)
     config_lines.append(f"# 国内域名规则（合并）")
@@ -213,7 +218,7 @@ def generate_whitelist_config_grouped(cn_domains, foreign_domains, cn_dns, forei
         config_lines.append(f"[/{domains_str}/] {dns_str}")
     return '\n'.join(config_lines)
 
-def generate_blacklist_config_grouped(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_grouped=None, custom_domain_dns_map=None):
+def generate_blacklist_config_grouped(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_grouped=None, custom_domain_dns_map=None, custom_patterns=None):
     config_lines = []
     config_lines.append("# AdGuard Home DNS 分流配置 - 黑名单模式")
     config_lines.append(f"# 自动生成于 {now_beijing()}")
@@ -234,8 +239,7 @@ def generate_blacklist_config_grouped(cn_domains, foreign_domains, cn_dns, forei
             dns_str = ' '.join(dns_list)
             config_lines.append(f"[/{domains_str}/] {dns_str}")
         config_lines.append("")
-    custom_domains_set = set(custom_domain_dns_map.keys()) if custom_domain_dns_map else set()
-    foreign_domains_filtered = foreign_domains - custom_domains_set
+    foreign_domains_filtered = filter_domains(foreign_domains, custom_patterns) if custom_patterns else foreign_domains
     grouped = group_domains_by_dns(foreign_domains_filtered, foreign_dns)
     config_lines.append("#" + "="*50)
     config_lines.append(f"# 国外域名规则（合并）")
@@ -261,6 +265,7 @@ def main():
     cn_dns = extract_domains.read_dns_servers(os.path.join('config', 'cn_dns.txt'), default_cn_dns)
     foreign_dns = extract_domains.read_dns_servers(os.path.join('config', 'foreign_dns.txt'), default_foreign_dns)
     custom_domain_dns_grouped, custom_domain_dns_map = read_custom_domain_dns(os.path.join('config', 'custom_domain_dns.txt'))
+    custom_patterns = list(custom_domain_dns_map.keys())
     logger.info(f"使用国内DNS服务器: {cn_dns}")
     logger.info(f"使用国外DNS服务器: {foreign_dns}")
     logger.info(f"自定义域名DNS规则数: {len(custom_domain_dns_map)}")
@@ -279,19 +284,19 @@ def main():
     # ==== 生成并保存4个分流文件 ====
     logger.info("生成白名单模式配置文件（逐条规则）...")
     whitelist_config_single = generate_whitelist_config_single(
-        cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_map
+        cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_map, custom_patterns
     )
     logger.info("生成白名单模式配置文件（合并规则）...")
     whitelist_config_grouped = generate_whitelist_config_grouped(
-        cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_grouped, custom_domain_dns_map
+        cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_grouped, custom_domain_dns_map, custom_patterns
     )
     logger.info("生成黑名单模式配置文件（逐条规则）...")
     blacklist_config_single = generate_blacklist_config_single(
-        cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_map
+        cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_map, custom_patterns
     )
     logger.info("生成黑名单模式配置文件（合并规则）...")
     blacklist_config_grouped = generate_blacklist_config_grouped(
-        cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_grouped, custom_domain_dns_map
+        cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_grouped, custom_domain_dns_map, custom_patterns
     )
     os.makedirs('dist', exist_ok=True)
     with open(os.path.join('dist', 'gn.txt'), 'w', encoding='utf-8') as f:
