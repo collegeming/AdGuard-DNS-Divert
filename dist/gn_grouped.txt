@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 白名单模式
-# 自动生成于 2025-06-28 00:40:09
+# 自动生成于 2025-06-28 00:45:56
 # 白名单模式：命中国内域名走国内DNS，其他走国外DNS
 # 包含自定义域名DNS规则
 
@@ -15,12 +15,11 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/openai.com/api.openai.com/] https://1.1.1.1/dns-query https://8.8.8.8/dns-query
 [/github.com/raw.githubusercontent.com/] https://101.101.101.101/dns-query https://1.1.1.1/dns-query
 [/steamcommunity.com/store.steampowered.com/] https://185.222.222.222/dns-query https://45.11.45.11/dns-query
-[/wx.tenpay.com/qqgame.com/wegame.com/tenpay.com/foxmail.com.cn/] https://doh.pub/dns-query
 [/hk/] https://dns.hk-resolver.com/dns-query
 [/jp/] https://dns.google/dns-query
 [/as174.de/] https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
 [/bing.com/] https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
-[/im.qq.com/*.tencent.com/*.weixin.com/weixin.qq.com/*.qqmusic.com/*.video.qq.com/*.itravelqq.com/*.qq.com/] https://doh.pub/dns-query
+[/wx.tenpay.com/qqgame.com/wegame.com/tenpay.com/foxmail.com.cn/im.qq.com/*.tencent.com/*.weixin.com/weixin.qq.com/*.qqmusic.com/*.video.qq.com/*.itravelqq.com/*.qq.com/] https://doh.pub/dns-query
 [/aliyun.com/*.aliyun.com/*.alibaba.com/*.taobao.com/*.tmall.com/*.alicdn.com/*.alipay.com/*.xiami.com/*.aliwangwang.com/] https://dns.alidns.com/dns-query
 [/bytedance.com/*.bytedance.com/*.byteimg.com/*.toutiao.com/*.douyin.com/*.iesdouyin.com/*.snssdk.com/*.pstatp.com/*.ixigua.com/] 180.184.1.1 180.184.2.2
 [/youku.com/*.youku.com/*.ykimg.com/*.tudou.com/*.ku6.com/] https://dns.alidns.com/dns-query
