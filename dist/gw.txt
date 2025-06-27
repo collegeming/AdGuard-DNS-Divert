@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 黑名单模式（逐条规则）
-# 自动生成于 2025-06-28 01:21:09
+# 自动生成于 2025-06-28 01:25:47
 # 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
 # 包含自定义域名DNS规则
 
@@ -77,7 +77,7 @@ https://doh-home.onedns.net/dns-query
 [/youku.com/]https://dns.alidns.com/dns-query
 
 #==================================================
-# 国外域名规则（共 32783 个域名，逐条规则）
+# 国外域名规则（共 32785 个域名，逐条规则）
 # 已排除 21 个自定义DNS域名（含通配符模糊覆盖）
 #==================================================
 [/000webhost.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -5086,6 +5086,7 @@ https://doh-home.onedns.net/dns-query
 [/bpmf.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/bppuniversity.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/bps.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
+[/br/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/br.st/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/bracknell.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/brad.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -6905,6 +6906,7 @@ https://doh-home.onedns.net/dns-query
 [/cmule.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/cmule.org/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/cmx.im/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
+[/cn/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/cn-proxy.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/cn.dayabook.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/cn.fmnnow.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
