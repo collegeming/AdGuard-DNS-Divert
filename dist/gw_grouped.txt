@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 黑名单模式
-# 自动生成于 2025-06-28 01:18:53
+# 自动生成于 2025-06-28 01:21:10
 # 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
 # 包含自定义域名DNS规则
 
@@ -16,7 +16,6 @@ https://doh-home.onedns.net/dns-query
 [/steamcommunity.com/store.steampowered.com/] https://185.222.222.222/dns-query https://45.11.45.11/dns-query
 [/hk/] https://dns.hk-resolver.com/dns-query
 [/jp/] https://dns.google/dns-query
-[/as174.de/] https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
 [/bing.com/] https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
 [/wx.tenpay.com/qqgame.com/wegame.com/tenpay.com/foxmail.com.cn/im.qq.com/*.tencent.com/*.weixin.com/weixin.qq.com/*.qqmusic.com/*.video.qq.com/*.itravelqq.com/*.qq.com/] https://doh.pub/dns-query
 [/aliyun.com/*.aliyun.com/*.alibaba.com/*.taobao.com/*.tmall.com/*.alicdn.com/*.alipay.com/*.xiami.com/*.aliwangwang.com/] https://dns.alidns.com/dns-query

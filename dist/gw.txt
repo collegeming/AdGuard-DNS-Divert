@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 黑名单模式（逐条规则）
-# 自动生成于 2025-06-28 01:18:52
+# 自动生成于 2025-06-28 01:21:09
 # 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
 # 包含自定义域名DNS规则
 
@@ -53,7 +53,6 @@ https://doh-home.onedns.net/dns-query
 [/360safe.com/]https://doh.360.cn/dns-query
 [/360totalsecurity.com/]https://doh.360.cn/dns-query
 [/aliyun.com/]https://dns.alidns.com/dns-query
-[/as174.de/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
 [/baidu.com/]180.76.76.76 2400:da00::6666
 [/baidubce.com/]180.76.76.76 2400:da00::6666
 [/baidubos.com/]180.76.76.76 2400:da00::6666
