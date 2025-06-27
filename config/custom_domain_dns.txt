@@ -15,7 +15,6 @@ steamcommunity.com/store.steampowered.com: https://185.222.222.222/dns-query, ht
 nas.local/router.local: 192.168.1.1, 192.168.1.2
 
 # 特殊域名自定义
-example.com/test.domain: tcp://8.8.8.8, tcp://1.1.1.1
 wx.tenpay.com/qqgame.com/wegame.com/tenpay.com/foxmail.com.cn: https://doh.pub/dns-query
 
 # 国家/地区顶级域名
@@ -33,7 +32,7 @@ im.qq.com/*.tencent.com/*.weixin.com/weixin.qq.com/*.qqmusic.com/*.video.qq.com/
 aliyun.com/*.aliyun.com/*.alibaba.com/*.taobao.com/*.tmall.com/*.alicdn.com/*.alipay.com/*.xiami.com/*.aliwangwang.com: https://dns.alidns.com/dns-query
 
 # 字节系域名组合（含通配符，需程序支持）
-bytedance.com/*.bytedance.com/*.byteimg.com/*.toutiao.com/*.douyin.com/*.iesdouyin.com/*.snssdk.com/*.pstatp.com/*.ixigua.com: 180.184.1.1，180.184.2.2
+bytedance.com/*.bytedance.com/*.byteimg.com/*.toutiao.com/*.douyin.com/*.iesdouyin.com/*.snssdk.com/*.pstatp.com/*.ixigua.com: 180.184.1.1, 180.184.2.2
 
 # 优酷系域名组合（含通配符，需程序支持）
 youku.com/*.youku.com/*.ykimg.com/*.tudou.com/*.ku6.com: https://dns.alidns.com/dns-query
