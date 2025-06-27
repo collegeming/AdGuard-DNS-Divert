@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 黑名单模式（逐条规则）
-# 自动生成于 2025-06-27 23:33:04
+# 自动生成于 2025-06-28 00:15:18
 # 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
 # 包含自定义域名DNS规则
 
@@ -11,17 +11,35 @@ https://120.53.53.53/dns-query
 https://doh-home.onedns.net/dns-query
 
 #==================================================
-# 自定义域名DNS规则（共 4 个域名）
+# 自定义域名DNS规则（共 22 个域名）
 # 这些规则优先级最高，会覆盖下面的国外规则
 #==================================================
+[/aliyun.com/]https://dns.alidns.com/dns-query
+[/api.openai.com/]https://1.1.1.1/dns-query https://8.8.8.8/dns-query
 [/as174.de/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
 [/bing.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
+[/bytedance.com/]180.184.1.1 180.184.2.2
+[/foxmail.com.cn/]https://doh.pub/dns-query
+[/github.com/]https://101.101.101.101/dns-query https://1.1.1.1/dns-query
 [/hk/]https://dns.hk-resolver.com/dns-query
+[/im.qq.com/]https://doh.pub/dns-query
 [/jp/]https://dns.google/dns-query
+[/nas.local/]192.168.1.1 192.168.1.2
+[/openai.com/]https://1.1.1.1/dns-query https://8.8.8.8/dns-query
+[/qqgame.com/]https://doh.pub/dns-query
+[/raw.githubusercontent.com/]https://101.101.101.101/dns-query https://1.1.1.1/dns-query
+[/router.local/]192.168.1.1 192.168.1.2
+[/steamcommunity.com/]https://185.222.222.222/dns-query https://45.11.45.11/dns-query
+[/store.steampowered.com/]https://185.222.222.222/dns-query https://45.11.45.11/dns-query
+[/tenpay.com/]https://doh.pub/dns-query
+[/wegame.com/]https://doh.pub/dns-query
+[/weixin.qq.com/]https://doh.pub/dns-query
+[/wx.tenpay.com/]https://doh.pub/dns-query
+[/youku.com/]https://dns.alidns.com/dns-query
 
 #==================================================
-# 国外域名规则（共 32801 个域名，逐条规则）
-# 已排除 3 个自定义DNS域名
+# 国外域名规则（共 32797 个域名，逐条规则）
+# 已排除 7 个自定义DNS域名
 #==================================================
 [/000webhost.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/01.org/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -12160,7 +12178,6 @@ https://doh-home.onedns.net/dns-query
 [/gitbooks.io/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/githack.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/github.blog/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/github.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/github.community/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/github.dev/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/github.io/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -21682,7 +21699,6 @@ https://doh-home.onedns.net/dns-query
 [/open.com.hk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/open.firstory.me/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/open.spotify.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/openai.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/openaiapi-site.azureedge.net/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/openallweb.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/openamt.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -26712,7 +26728,6 @@ https://doh-home.onedns.net/dns-query
 [/steam.ru.qtlglb.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/steambroadcast.akamaized.net/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/steamcommunity-a.akamaihd.net/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/steamcommunity.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/steamcontent.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/steamdb.info/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/steamdeck.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -26810,7 +26825,6 @@ https://doh-home.onedns.net/dns-query
 [/store-bridgestonesports.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/store.apple.com.edgekey.net/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/store.sprite.org/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/store.steampowered.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/storesense.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/stories.google/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/storiesofchange.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
