@@ -85,40 +85,52 @@ def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
     """读取自定义域名DNS配置"""
     custom_dns = {}
     if not os.path.exists(file_path):
-        logger.info(f"自定义域名DNS文件不存在: {file_path}")
+        logger.error(f"自定义域名DNS文件不存在: {file_path}")
         return custom_dns
+
     with open(file_path, 'r', encoding='utf-8') as f:
         for line_num, line in enumerate(f, 1):
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
+
+            logger.debug(f"解析行 {line_num}: {line}")
+
             if ':' not in line:
-                logger.warning(f"第 {line_num} 行格式错误，缺少冒号: {line}")
+                logger.error(f"第 {line_num} 行格式错误，缺少冒号: {line}")
                 continue
-            parts = line.split(':', 1)
-            domain = parts[0].strip()
-            dns_servers = [dns.strip() for dns in parts[1].split(',') if dns.strip()]
+
+            domain, dns_list = line.split(':', 1)
+            domain = domain.strip()
+            dns_servers = [dns.strip() for dns in dns_list.split(',') if dns.strip()]
+
             if not domain:
-                logger.warning(f"第 {line_num} 行域名为空")
+                logger.error(f"第 {line_num} 行域名为空")
                 continue
-            if not dns_servers:
-                logger.warning(f"第 {line_num} 行DNS服务器为空")
+            if len(dns_servers) < 2:  # 检查至少有两个 DNS 地址
+                logger.error(f"第 {line_num} 行DNS服务器数量不足: {dns_servers}")
                 continue
-            # 验证域名格式（允许TLD如cn、hk等）
-            if not extract_domains.is_valid_domain(domain) and domain not in ['cn', 'hk', 'mo', 'tw', 'jp', 'kr', 'sg']:
-                logger.warning(f"第 {line_num} 行域名格式无效: {domain}")
+
+            # 通配符支持
+            if domain.startswith('*'):
+                domain = domain.lstrip('*.')  # 去除通配符前缀
+                if not extract_domains.is_valid_domain(domain):
+                    logger.error(f"第 {line_num} 行通配符域名格式无效: {domain}")
+                    continue
+                logger.info(f"添加通配符DNS规则: {domain} -> {dns_servers}")
+                custom_dns[domain] = dns_servers
                 continue
+
+            # 顶级域名支持
+            if not extract_domains.is_valid_domain(domain) and domain not in ALLOWED_TLD:
+                logger.error(f"第 {line_num} 行域名格式无效: {domain}")
+                continue
+
             custom_dns[domain] = dns_servers
             logger.info(f"添加自定义DNS规则: {domain} -> {dns_servers}")
+
     logger.info(f"从自定义DNS文件中读取了 {len(custom_dns)} 条规则")
     return custom_dns
-
-def group_domains_by_dns(domain_set, dns_list):
-    dns_tuple = tuple(dns_list)
-    result = defaultdict(list)
-    for domain in sorted(domain_set):
-        result[dns_tuple].append(domain)
-    return result
 
 def generate_whitelist_config_single(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns=None):
     config_lines = []
