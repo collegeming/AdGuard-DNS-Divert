@@ -82,7 +82,7 @@ def process_sources(sources, custom_file=None) -> set:
     return all_domains
 
 def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
-    """读取自定义域名DNS配置，支持多个域名一行 domain1/domain2: dns1, dns2"""
+    """读取自定义域名DNS配置，支持多个域名一行 domain1/domain2: dns1, dns2，支持通配符*"""
     custom_dns = {}
     if not os.path.exists(file_path):
         logger.info(f"自定义域名DNS文件不存在: {file_path}")
@@ -104,15 +104,20 @@ def read_custom_domain_dns(file_path: str) -> Dict[str, List[str]]:
             if not dns_servers:
                 logger.warning(f"第 {line_num} 行DNS服务器为空")
                 continue
-            # 支持 domain1/domain2/domain3 形式
+            # 支持 domain1/domain2/domain3 形式和通配符*
             domains = [d.strip() for d in domains_part.split('/') if d.strip()]
             for domain in domains:
-                # 验证域名格式（允许TLD如cn、hk等）
-                if not extract_domains.is_valid_domain(domain) and domain not in ['cn', 'hk', 'mo', 'tw', 'jp', 'kr', 'sg']:
-                    logger.warning(f"第 {line_num} 行域名格式无效: {domain}")
-                    continue
-                custom_dns[domain] = dns_servers
-                logger.info(f"添加自定义DNS规则: {domain} -> {dns_servers}")
+                if '*' in domain:
+                    # 允许 * 出现在任意位置，直接放行
+                    custom_dns[domain] = dns_servers
+                    logger.info(f"添加自定义DNS规则(通配符): {domain} -> {dns_servers}")
+                else:
+                    # 验证域名格式（允许TLD如cn、hk等）
+                    if not extract_domains.is_valid_domain(domain) and domain not in ['cn', 'hk', 'mo', 'tw', 'jp', 'kr', 'sg']:
+                        logger.warning(f"第 {line_num} 行域名格式无效: {domain}")
+                        continue
+                    custom_dns[domain] = dns_servers
+                    logger.info(f"添加自定义DNS规则: {domain} -> {dns_servers}")
     logger.info(f"从自定义DNS文件中读取了 {len(custom_dns)} 条规则")
     return custom_dns
 
