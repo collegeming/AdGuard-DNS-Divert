@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 黑名单模式
-# 自动生成于 2025-06-28 08:57:32
+# 自动生成于 2025-06-28 14:42:41
 # 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
 # 包含自定义域名DNS规则
 
@@ -19,7 +19,6 @@ https://doh-home.onedns.net/dns-query
 [/bing.com/] https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
 [/wx.tenpay.com/qqgame.com/wegame.com/tenpay.com/foxmail.com.cn/im.qq.com/*.tencent.com/*.weixin.com/weixin.qq.com/*.qqmusic.com/*.video.qq.com/*.itravelqq.com/*.qq.com/] https://doh.pub/dns-query
 [/aliyun.com/*.aliyun.com/*.alibaba.com/*.taobao.com/*.tmall.com/*.alicdn.com/*.alipay.com/*.xiami.com/*.aliwangwang.com/] https://dns.alidns.com/dns-query
-[/bytedance.com/*.bytedance.com/*.byteimg.com/*.toutiao.com/*.douyin.com/*.iesdouyin.com/*.snssdk.com/*.pstatp.com/*.ixigua.com/] 180.184.1.1 180.184.2.2
 [/youku.com/*.youku.com/*.ykimg.com/*.tudou.com/*.ku6.com/] https://dns.alidns.com/dns-query
 [/baidu.com/*.baidu.com/baidubce.com/*.baidubce.com/baidubox.com/*.baidubox.com/bce.baidu.com/hao123.com/*.hao123.com/baidubos.com/*.baidubos.com/] 180.76.76.76 2400:da00::6666
 [/360.cn/*.360.cn/so.com/*.so.com/qihoo.com/*.qihoo.com/360safe.com/*.360safe.com/360totalsecurity.com/*.360totalsecurity.com/] https://doh.360.cn/dns-query
