@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 黑名单模式（逐条规则）
-# 自动生成于 2025-06-30 20:05:17
+# 自动生成于 2025-06-30 20:22:39
 # 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
 # 包含自定义域名DNS规则
 
@@ -12,7 +12,6 @@ https://doh-home.onedns.net/dns-query
 #==================================================
 # 自定义域名DNS规则（逐条规则输出）
 #==================================================
-[/**cache*baidu*com/]180.76.76.76 2400:da00::6666
 [/*.360.cn/]https://doh.360.cn/dns-query
 [/*.360safe.com/]https://doh.360.cn/dns-query
 [/*.360totalsecurity.com/]https://doh.360.cn/dns-query
@@ -21,6 +20,11 @@ https://doh-home.onedns.net/dns-query
 [/*.alipay.com/]https://dns.alidns.com/dns-query
 [/*.aliwangwang.com/]https://dns.alidns.com/dns-query
 [/*.aliyun.com/]https://dns.alidns.com/dns-query
+[/*.baidu.com/]180.76.76.76 2400:da00::6666
+[/*.baidubce.com/]180.76.76.76 2400:da00::6666
+[/*.baidubos.com/]180.76.76.76 2400:da00::6666
+[/*.baidubox.com/]180.76.76.76 2400:da00::6666
+[/*.hao123.com/]180.76.76.76 2400:da00::6666
 [/*.itravelqq.com/]https://doh.pub/dns-query
 [/*.ku6.com/]https://dns.alidns.com/dns-query
 [/*.qihoo.com/]https://doh.360.cn/dns-query
@@ -36,42 +40,6 @@ https://doh-home.onedns.net/dns-query
 [/*.xiami.com/]https://dns.alidns.com/dns-query
 [/*.ykimg.com/]https://dns.alidns.com/dns-query
 [/*.youku.com/]https://dns.alidns.com/dns-query
-[/*disk*baidu*com/]180.76.76.76 2400:da00::6666
-[/.b.baidu.com/]180.76.76.76 2400:da00::6666
-[/.baidu.com/]180.76.76.76 2400:da00::6666
-[/.baidubce.com/]180.76.76.76 2400:da00::6666
-[/.baidubos.com/]180.76.76.76 2400:da00::6666
-[/.baidubox.com/]180.76.76.76 2400:da00::6666
-[/.bar.baidu.com/]180.76.76.76 2400:da00::6666
-[/.bbs.baidu.com/]180.76.76.76 2400:da00::6666
-[/.bk.baidu.com/]180.76.76.76 2400:da00::6666
-[/.dict.baidu.com/]180.76.76.76 2400:da00::6666
-[/.edu.baidu.com/]180.76.76.76 2400:da00::6666
-[/.file.baidu.com/]180.76.76.76 2400:da00::6666
-[/.flash.baidu.com/]180.76.76.76 2400:da00::6666
-[/.gov.baidu.com/]180.76.76.76 2400:da00::6666
-[/.guoxue.baidu.com/]180.76.76.76 2400:da00::6666
-[/.hao123.com/]180.76.76.76 2400:da00::6666
-[/.hi.baidu.com/]180.76.76.76 2400:da00::6666
-[/.iknow.baidu.com/]180.76.76.76 2400:da00::6666
-[/.imgnews.baidu.com/]180.76.76.76 2400:da00::6666
-[/.index.baidu.com/]180.76.76.76 2400:da00::6666
-[/.ix.baidu.com/]180.76.76.76 2400:da00::6666
-[/.kongjian.baidu.com/]180.76.76.76 2400:da00::6666
-[/.love.baidu.com/]180.76.76.76 2400:da00::6666
-[/.mp3search.baidu.com/]180.76.76.76 2400:da00::6666
-[/.newsalert.baidu.com/]180.76.76.76 2400:da00::6666
-[/.post-js.baidu.com/]180.76.76.76 2400:da00::6666
-[/.post.baidu.com/]180.76.76.76 2400:da00::6666
-[/.rnews.baidu.com/]180.76.76.76 2400:da00::6666
-[/.shaoer*baidu*com/]180.76.76.76 2400:da00::6666
-[/.space.baidu.com/]180.76.76.76 2400:da00::6666
-[/.spaces.baidu.com/]180.76.76.76 2400:da00::6666
-[/.wapiknow.baidu.com/]180.76.76.76 2400:da00::6666
-[/.wapp.baidu.com/]180.76.76.76 2400:da00::6666
-[/.youbian.baidu.com/]180.76.76.76 2400:da00::6666
-[/.z.baidu.com/]180.76.76.76 2400:da00::6666
-[/.zhidaocommit.baidu.com/]180.76.76.76 2400:da00::6666
 [/360.cn/]https://doh.360.cn/dns-query
 [/360safe.com/]https://doh.360.cn/dns-query
 [/360totalsecurity.com/]https://doh.360.cn/dns-query
@@ -99,8 +67,8 @@ https://doh-home.onedns.net/dns-query
 [/youku.com/]https://dns.alidns.com/dns-query
 
 #==================================================
-# 国外域名规则（共 32795 个域名，逐条规则）
-# 已排除 9 个自定义DNS域名（含通配符模糊覆盖）
+# 国外域名规则（共 32783 个域名，逐条规则）
+# 已排除 21 个自定义DNS域名（含通配符模糊覆盖）
 #==================================================
 [/000webhost.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/01.org/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -1164,7 +1132,6 @@ https://doh-home.onedns.net/dns-query
 [/adx.promo/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/ae/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/ae-ad-1.myhuaweicloud.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/ae.hao123.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/ae.org/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/aeasyshop.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/aebn.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -2462,7 +2429,6 @@ https://doh-home.onedns.net/dns-query
 [/aqmen.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/aquinas.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/ar/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/ar.hao123.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/arab/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/arabianchicks.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/arabidopsis.org/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -5110,7 +5076,6 @@ https://doh-home.onedns.net/dns-query
 [/bpmf.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/bppuniversity.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/bps.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/br.hao123.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/br.st/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/bracknell.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/brad.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -9653,7 +9618,6 @@ https://doh-home.onedns.net/dns-query
 [/emwprep.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/en-compass.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/en.favotter.net/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/en.hao123.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/enablementadobe.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/enanyang.my/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/enbit.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -14712,7 +14676,6 @@ https://doh-home.onedns.net/dns-query
 [/icu-project.org/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/icuminside.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/id/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/id.hao123.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/id.heroku.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/idaiwan.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/idarkdoll.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -16372,7 +16335,6 @@ https://doh-home.onedns.net/dns-query
 [/joymiihub.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/joyourself.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/joysporn.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/jp.hao123.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/jp.net/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/jpav.us/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/jpavcom.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -17865,7 +17827,6 @@ https://doh-home.onedns.net/dns-query
 [/m5universities.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/m8008.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/ma/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/ma.hao123.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/ma1lib.org/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/maa.plus/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/mabbank.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -19754,7 +19715,6 @@ https://doh-home.onedns.net/dns-query
 [/mwhentai.net/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/mwrc.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/mx/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/mx.hao123.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/mx981.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/mxmcdn.net/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/mxshm.site/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -24720,7 +24680,6 @@ https://doh-home.onedns.net/dns-query
 [/sa-brazil-1.myhuaweicloud.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/sa-saopaulo.myqcloud.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/sa.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/sa.hao123.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/saasexch.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/saasexch.io/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/saboom.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -27708,7 +27667,6 @@ https://doh-home.onedns.net/dns-query
 [/tgtube.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/tgutube.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/th/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/th.hao123.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/th.weibo.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/thai-xxx.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/thai69.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -28744,7 +28702,6 @@ https://doh-home.onedns.net/dns-query
 [/tw-blog.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/tw-npo.org/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/tw.gigacircle.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/tw.hao123.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/tw.iqiyi.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/tw.jiepang.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/tw.streetvoice.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -30152,7 +30109,6 @@ https://doh-home.onedns.net/dns-query
 [/vmwservices.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/vmwxw.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/vn/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/vn.hao123.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/vnanchoi.ca/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/vnet.link/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/vnware.net/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
