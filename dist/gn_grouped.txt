@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 白名单模式
-# 自动生成于 2025-06-30 09:02:42
+# 自动生成于 2025-06-30 20:05:15
 # 白名单模式：命中国内域名走国内DNS，其他走国外DNS
 # 包含自定义域名DNS规则
 
@@ -19,7 +19,7 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/wx.tenpay.com/qqgame.com/wegame.com/tenpay.com/foxmail.com.cn/im.qq.com/*.tencent.com/*.weixin.com/weixin.qq.com/*.qqmusic.com/*.video.qq.com/*.itravelqq.com/*.qq.com/] https://doh.pub/dns-query
 [/aliyun.com/*.aliyun.com/*.alibaba.com/*.taobao.com/*.tmall.com/*.alicdn.com/*.alipay.com/*.xiami.com/*.aliwangwang.com/] https://dns.alidns.com/dns-query
 [/youku.com/*.youku.com/*.ykimg.com/*.tudou.com/*.ku6.com/] https://dns.alidns.com/dns-query
-[/baidu.com/*.baidu.com/baidubce.com/*.baidubce.com/baidubox.com/*.baidubox.com/bce.baidu.com/hao123.com/*.hao123.com/baidubos.com/*.baidubos.com/] 180.76.76.76 2400:da00::6666
+[/baidu.com/.baidu.com/baidubce.com/.baidubce.com/baidubox.com/.baidubox.com/bce.baidu.com/hao123.com/.hao123.com/baidubos.com/.baidubos.com/.post-js.baidu.com/.bbs.baidu.com/.wapp.baidu.com/.post.baidu.com/.ix.baidu.com/.mp3search.baidu.com/.imgnews.baidu.com/.newsalert.baidu.com/.rnews.baidu.com/.z.baidu.com/.iknow.baidu.com/.zhidaocommit.baidu.com/.wapiknow.baidu.com/.b.baidu.com/.bk.baidu.com/.hi.baidu.com/.kongjian.baidu.com/.space.baidu.com/.spaces.baidu.com/.love.baidu.com/.index.baidu.com/.youbian.baidu.com/.guoxue.baidu.com/.dict.baidu.com/.file.baidu.com/.bar.baidu.com/.flash.baidu.com/.gov.baidu.com/.edu.baidu.com/.shaoer*baidu*com/*disk*baidu*com/**cache*baidu*com/] 180.76.76.76 2400:da00::6666
 [/360.cn/*.360.cn/so.com/*.so.com/qihoo.com/*.qihoo.com/360safe.com/*.360safe.com/360totalsecurity.com/*.360totalsecurity.com/] https://doh.360.cn/dns-query
 
 #==================================================
