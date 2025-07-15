@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 黑名单模式（逐条规则）
-# 自动生成于 2025-07-15 20:40:06
+# 自动生成于 2025-07-15 20:49:55
 # 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
 # 包含自定义域名DNS规则
 
@@ -67,7 +67,7 @@ https://doh-home.onedns.net/dns-query
 [/youku.com/]https://dns.alidns.com/dns-query
 
 #==================================================
-# 国外域名规则（共 32783 个域名，逐条规则）
+# 国外域名规则（共 32780 个域名，逐条规则）
 # 已排除 21 个自定义DNS域名（含通配符模糊覆盖）
 #==================================================
 [/000webhost.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
@@ -28100,9 +28100,6 @@ https://doh-home.onedns.net/dns-query
 [/tilehill.ac.uk/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/tiltbrush.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/timdir.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/time.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/time.gov/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
-[/time.nrc.ca/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/timefxapp.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/timeinc.net/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
 [/timelinestoryteller.com/]https://dns.916899380.xyz:2053/dns-query tls://dns.916899380.xyz:784 quic://dns.916899380.xyz:853 https://cc.ivws.cloudns.be:2053/dns-query
