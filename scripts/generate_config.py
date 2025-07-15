@@ -107,11 +107,9 @@ def group_domains_by_dns(domain_set, dns_list):
     return result
 
 def wildcard_matches(domain: str, patterns: List[str]) -> bool:
-    """检查 domain 是否被 patterns 里的通配符或精确域名匹配"""
     for pat in patterns:
         if pat.startswith('*.'):
             base = pat[2:]
-            # 排除自身和所有子域（abc.com 及 *.abc.com、foo.abc.com等）
             if domain == base or domain.endswith('.' + base):
                 return True
         elif '*' in pat:
@@ -123,7 +121,6 @@ def wildcard_matches(domain: str, patterns: List[str]) -> bool:
     return False
 
 def filter_domains(domains: set, custom_patterns: List[str]) -> set:
-    """返回未被自定义规则（含通配符）覆盖的域名"""
     return {d for d in domains if not wildcard_matches(d, custom_patterns)}
 
 def generate_whitelist_config_single(cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_map=None, custom_patterns=None):
@@ -145,7 +142,6 @@ def generate_whitelist_config_single(cn_domains, foreign_domains, cn_dns, foreig
         for domain, dns_list in sorted(custom_domain_dns_map.items()):
             config_lines.append(f"[/{domain}/]{' '.join(dns_list)}")
         config_lines.append("")
-    # 通配符模糊去重
     cn_domains_filtered = filter_domains(cn_domains, custom_patterns) if custom_patterns else cn_domains
     config_lines.append("#" + "="*50)
     config_lines.append(f"# 国内域名规则（共 {len(cn_domains_filtered)} 个域名，逐条规则）")
@@ -258,6 +254,16 @@ def remove_duplicates_in_list(domains):
         logger.info(f"从列表中移除了 {initial_count - len(unique_domains)} 个重复域名")
     return unique_domains
 
+def read_domains_from_file(file_path):
+    domains = set()
+    if os.path.exists(file_path):
+        with open(file_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                domain = line.strip()
+                if domain and not domain.startswith('#'):
+                    domains.add(domain)
+    return domains
+
 def main():
     config = load_config()
     default_cn_dns = ["https://doh.pub/dns-query", "https://dns.alidns.com/dns-query"]
@@ -271,16 +277,26 @@ def main():
     logger.info(f"自定义域名DNS规则数: {len(custom_domain_dns_map)}")
     cn_sources = config.get('sources', {}).get('cn_domains', [])
     foreign_sources = config.get('sources', {}).get('foreign_domains', [])
+
     logger.info("开始提取国内域名...")
     cn_domains = process_sources(cn_sources, os.path.join('config', 'custom_cn_domains.txt'))
     logger.info("开始提取国外域名...")
     foreign_domains = process_sources(foreign_sources, os.path.join('config', 'custom_foreign_domains.txt'))
+
+    custom_cn_domains_set = read_domains_from_file(os.path.join('config', 'custom_cn_domains.txt'))
+    logger.info(f"custom_cn_domains.txt 域名数量: {len(custom_cn_domains_set)}")
+
     logger.info("对国内域名列表进行去重...")
     cn_domains = remove_duplicates_in_list(cn_domains)
     logger.info(f"去重后国内域名数量: {len(cn_domains)}")
     logger.info("对国外域名列表进行去重...")
     foreign_domains = remove_duplicates_in_list(foreign_domains)
     logger.info(f"去重后国外域名数量: {len(foreign_domains)}")
+
+    # 自动排除 custom_cn_domains.txt 的域名（黑名单分流文件用）
+    foreign_domains_for_blacklist = foreign_domains - custom_cn_domains_set
+    logger.info(f"排除 custom_cn_domains.txt 后国外域名数量: {len(foreign_domains_for_blacklist)}")
+
     # ==== 生成并保存4个分流文件 ====
     logger.info("生成白名单模式配置文件（逐条规则）...")
     whitelist_config_single = generate_whitelist_config_single(
@@ -292,11 +308,11 @@ def main():
     )
     logger.info("生成黑名单模式配置文件（逐条规则）...")
     blacklist_config_single = generate_blacklist_config_single(
-        cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_map, custom_patterns
+        cn_domains, foreign_domains_for_blacklist, cn_dns, foreign_dns, custom_domain_dns_map, custom_patterns
     )
     logger.info("生成黑名单模式配置文件（合并规则）...")
     blacklist_config_grouped = generate_blacklist_config_grouped(
-        cn_domains, foreign_domains, cn_dns, foreign_dns, custom_domain_dns_grouped, custom_domain_dns_map, custom_patterns
+        cn_domains, foreign_domains_for_blacklist, cn_dns, foreign_dns, custom_domain_dns_grouped, custom_domain_dns_map, custom_patterns
     )
     os.makedirs('dist', exist_ok=True)
     with open(os.path.join('dist', 'gn.txt'), 'w', encoding='utf-8') as f:
@@ -319,11 +335,11 @@ def main():
                 f.write(f"{domain}: {', '.join(dns_list)}\n")
     logger.info("配置文件生成完成")
     logger.info(f"白名单模式：共 {len(cn_domains)} 个国内域名")
-    logger.info(f"黑名单模式：共 {len(foreign_domains)} 个国外域名")
+    logger.info(f"黑名单模式：共 {len(foreign_domains_for_blacklist)} 个国外域名")
     logger.info(f"自定义域名DNS：共 {len(custom_domain_dns_map)} 个域名")
     if custom_domain_dns_map:
         cn_overridden = len(cn_domains.intersection(set(custom_domain_dns_map.keys())))
-        foreign_overridden = len(foreign_domains.intersection(set(custom_domain_dns_map.keys())))
+        foreign_overridden = len(foreign_domains_for_blacklist.intersection(set(custom_domain_dns_map.keys())))
         if cn_overridden > 0:
             logger.info(f"自定义DNS覆盖了 {cn_overridden} 个国内域名")
         if foreign_overridden > 0:
