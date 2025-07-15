@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 白名单模式（逐条规则）
-# 自动生成于 2025-07-15 16:09:44
+# 自动生成于 2025-07-15 16:14:27
 # 白名单模式：命中国内域名走国内DNS，其他走国外DNS
 # 包含自定义域名DNS规则
 
@@ -67,7 +67,7 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/youku.com/]https://dns.alidns.com/dns-query
 
 #==================================================
-# 国内域名规则（共 120006 个域名，逐条规则）
+# 国内域名规则（共 120007 个域名，逐条规则）
 # 已排除 27 个自定义DNS域名（含通配符模糊覆盖）
 #==================================================
 [/0.zone/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
@@ -95244,6 +95244,7 @@ https://cc.ivws.cloudns.be:2053/dns-query
 [/time-weekly.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
 [/time-year.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
 [/time.apple.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
+[/time.google.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
 [/time.izatcloud.net/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
 [/time.xtracloud.net/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
 [/timecloud.us/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
