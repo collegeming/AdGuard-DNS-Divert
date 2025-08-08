@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 白名单模式（逐条规则）
-# 自动生成于 2025-08-08 17:50:03
+# 自动生成于 2025-08-08 19:21:00
 # 白名单模式：命中国内域名走国内DNS，其他走国外DNS
 # 包含自定义域名DNS规则
 
@@ -52,9 +52,7 @@ quic://e858b2.dns.nextdns.io
 [/bing.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
 [/foxmail.com.cn/]https://doh.pub/dns-query
 [/hao123.com/]180.76.76.76
-[/hk/]https://dns.hk-resolver.com/dns-query
 [/im.qq.com/]https://doh.pub/dns-query
-[/jp/]https://dns.google/dns-query
 [/qihoo.com/]https://doh.360.cn/dns-query
 [/qqgame.com/]https://doh.pub/dns-query
 [/so.com/]https://doh.360.cn/dns-query

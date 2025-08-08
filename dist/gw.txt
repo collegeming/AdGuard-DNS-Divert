@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 黑名单模式（逐条规则）
-# 自动生成于 2025-08-08 17:50:06
+# 自动生成于 2025-08-08 19:21:03
 # 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
 # 包含自定义域名DNS规则
 
@@ -52,9 +52,7 @@ https://doh-home.onedns.net/dns-query
 [/bing.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query
 [/foxmail.com.cn/]https://doh.pub/dns-query
 [/hao123.com/]180.76.76.76
-[/hk/]https://dns.hk-resolver.com/dns-query
 [/im.qq.com/]https://doh.pub/dns-query
-[/jp/]https://dns.google/dns-query
 [/qihoo.com/]https://doh.360.cn/dns-query
 [/qqgame.com/]https://doh.pub/dns-query
 [/so.com/]https://doh.360.cn/dns-query
@@ -67,8 +65,8 @@ https://doh-home.onedns.net/dns-query
 [/youku.com/]https://dns.alidns.com/dns-query
 
 #==================================================
-# 国外域名规则（共 32778 个域名，逐条规则）
-# 已排除 21 个自定义DNS域名（含通配符模糊覆盖）
+# 国外域名规则（共 32780 个域名，逐条规则）
+# 已排除 19 个自定义DNS域名（含通配符模糊覆盖）
 #==================================================
 [/000webhost.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/01.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -13761,6 +13759,7 @@ https://doh-home.onedns.net/dns-query
 [/hjclub.info/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hjd2048.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hjholdings.jp/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/hk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hk-pub.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hk.file.myqcloud.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hk.frienddy.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -16333,6 +16332,7 @@ https://doh-home.onedns.net/dns-query
 [/joymiihub.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/joyourself.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/joysporn.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/jp/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/jp.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/jpav.us/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/jpavcom.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
