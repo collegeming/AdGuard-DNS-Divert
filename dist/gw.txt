@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 黑名单模式（逐条规则）
-# 自动生成于 2025-08-10 09:07:24
+# 自动生成于 2025-08-11 09:05:02
 # 黑名单模式：命中国外域名走国外DNS，其他走国内DNS
 # 包含自定义域名DNS规则
 
@@ -65,7 +65,7 @@ https://doh-home.onedns.net/dns-query
 [/youku.com/]https://dns.alidns.com/dns-query
 
 #==================================================
-# 国外域名规则（共 32780 个域名，逐条规则）
+# 国外域名规则（共 32832 个域名，逐条规则）
 # 已排除 19 个自定义DNS域名（含通配符模糊覆盖）
 #==================================================
 [/000webhost.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -102,6 +102,7 @@ https://doh-home.onedns.net/dns-query
 [/1111mod-tube.buzz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/1111mode.xyz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/1111modpo.info/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/111666.best/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/112263.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/114av.xyz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/119474.xyz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -253,6 +254,7 @@ https://doh-home.onedns.net/dns-query
 [/1lib.eu/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/1lib.limited/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/1lib.pl/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/1lib.sk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/1lib.to/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/1lib.tw/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/1mobile.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -624,6 +626,7 @@ https://doh-home.onedns.net/dns-query
 [/91avfuli.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/91beiyong.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/91cy.app/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/91dasai.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/91dy.club/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/91fans.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/91gay.me/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -806,6 +809,7 @@ https://doh-home.onedns.net/dns-query
 [/aboutyourmini.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/abow.jp/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/abpchina.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/abplive.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/abrsm.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/abs.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/abs.edu/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -1332,6 +1336,7 @@ https://doh-home.onedns.net/dns-query
 [/aisex.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/aishegw.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/aiss.anws.gov.tw/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/aistudio.google.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ait.org.tw/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/aiv-cdn.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/aiv-cdn.net.c.footprint.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -1793,6 +1798,7 @@ https://doh-home.onedns.net/dns-query
 [/amsterdamhotescort.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/amsterdamluxescort.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/amtb-taipei.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/amuletmc.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/amytele.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/amzn.asia/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/amzn.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -2504,6 +2510,7 @@ https://doh-home.onedns.net/dns-query
 [/arphic.com.tw/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/arrc.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ars.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/arstechnica.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/art1lib.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/art4tibet1998.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/artcam.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -2533,6 +2540,7 @@ https://doh-home.onedns.net/dns-query
 [/arukas.io/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/arunachalforests.gov.in/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/arupoc.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/arvanstorage.ir/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/arxiv.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/arzon.jp/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/as/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -2764,7 +2772,6 @@ https://doh-home.onedns.net/dns-query
 [/audiencenetwork.tv/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/audiobeatsau.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/audiobeatsbydre.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
-[/audiomack.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/audiomonsterbeatsonline.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/audionow.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/aue.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -4249,6 +4256,7 @@ https://doh-home.onedns.net/dns-query
 [/blackfridaydrebeatsshop.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/blackhomeporn.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/blacklogic.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/blackmagicdesign.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/blackmonsterterror.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/blackpool-acl.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/blackpool.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -6590,6 +6598,7 @@ https://doh-home.onedns.net/dns-query
 [/cias.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ciattackers.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cib.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/cici.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ciciai.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cicl.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cied.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -6988,13 +6997,13 @@ https://doh-home.onedns.net/dns-query
 [/coem.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cof.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cofacts.tw/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/coffeemanga.to/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cogc.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cognito-identity.us-east-1.amazonaws.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/coin2co.in/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/coinalyze.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/coinbase.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/coinbene.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
-[/coincarp.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/coincheck.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/coindesk.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/coinegg.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -7078,7 +7087,6 @@ https://doh-home.onedns.net/dns-query
 [/comefromchina.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/comet-study.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cometotheduckside.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
-[/comffvpn.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/comic-mega.me/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/comicbox.xyz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/comico.tw/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -7301,6 +7309,7 @@ https://doh-home.onedns.net/dns-query
 [/cppe.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cppr.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cptt.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/cpu-monkey.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cpz.to/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cq99.us/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/cqcorea.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -7476,6 +7485,7 @@ https://doh-home.onedns.net/dns-query
 [/ctfassets.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ctfriend.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ctg.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/ctinews.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ctitv.com.tw/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ctk.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ctkaquinas.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -7556,6 +7566,8 @@ https://doh-home.onedns.net/dns-query
 [/curdev-fe-ni.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/curioustravellers.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/curl.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/curosr.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/curosr.sh/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/currently.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/currently.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/currenttime.tv/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -10848,6 +10860,7 @@ https://doh-home.onedns.net/dns-query
 [/financeleadsonline.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/financetwitter.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/financialadvisoriq.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/financialexpress.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/financialsoccer.ca/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/finchvpn.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/find-apple.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -12613,6 +12626,7 @@ https://doh-home.onedns.net/dns-query
 [/google.com.tz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/google.com.ua/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/google.com.ug/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/google.com.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/google.com.uy/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/google.com.uz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/google.com.vc/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -12819,12 +12833,14 @@ https://doh-home.onedns.net/dns-query
 [/gotgeeks.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/gothdporn.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/gotporn.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/gotquestions.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/gotraffic.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/gotrusted.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/gotv/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/gotw.ca/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/gouri.xyz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/gov/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/gov.ir/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/gov.taipei/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/gov.tw/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/governmentengineer.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -13726,6 +13742,7 @@ https://doh-home.onedns.net/dns-query
 [/himemix.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hindawi.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hindiweb.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/hindustantimes.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hinet.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hipaa6020.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hiperduct.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -14003,6 +14020,7 @@ https://doh-home.onedns.net/dns-query
 [/hotbed.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hotcandyland.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hotcoin.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/hotcool.tw/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hotcuckoldwife.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hotcumporn.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/hotels.cn/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -14693,6 +14711,7 @@ https://doh-home.onedns.net/dns-query
 [/idlcoyote.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/idnike.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/idol-sagasukun.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/idope.se/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/idouga.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/idras.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/idreamx.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -15108,6 +15127,7 @@ https://doh-home.onedns.net/dns-query
 [/indiansexstories.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/indiansexstories2.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/indiatimes.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/indiatoday.in/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/indiemerch.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/indienudes.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/indies-av.co.jp/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -15672,6 +15692,7 @@ https://doh-home.onedns.net/dns-query
 [/iqq3.cc/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/iqqtv.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ir/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/irangov.ir/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/iranianboobs.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/iranlms.ir/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/iransextv.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -15686,6 +15707,7 @@ https://doh-home.onedns.net/dns-query
 [/iris.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/irish/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/iriss.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/irna.ir/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/iromod91.info/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ironbigfools.compython.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ironna.jp/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -17022,6 +17044,8 @@ https://doh-home.onedns.net/dns-query
 [/lcwc.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ld.hao123img.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ldoc-cdt.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/ldplayer.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/ldplayer.tw/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/le-direct.tv/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/le-vpn.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/le.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -17746,6 +17770,7 @@ https://doh-home.onedns.net/dns-query
 [/lucid.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/luckydesigner.space/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/luckyissue.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/ludepress.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ludlow-college.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/lufton-college-fe.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/luftoncollege.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -19144,6 +19169,7 @@ https://doh-home.onedns.net/dns-query
 [/misoc.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/missav.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/missav.uno/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/missav.ws/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/missendenabbey.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/misshotgirls.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/misskey-square.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -19619,6 +19645,7 @@ https://doh-home.onedns.net/dns-query
 [/msunlimitedcloudsummit.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/mswe1.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/mt/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/mt.co.kr/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/mt.lv/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/mt0011.site/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/mtao.fun/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -20001,6 +20028,7 @@ https://doh-home.onedns.net/dns-query
 [/naijauncut.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/nailedhard.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/naitik.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/naixi.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/naizitv.top/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/nakadashi.to/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/naked-asian-porn.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -20261,6 +20289,7 @@ https://doh-home.onedns.net/dns-query
 [/nentindo.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/neo-miracle.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/neodaas.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/neoforged.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/neonatalsociety.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/neotokyo.supertop-100.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/neow.in/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -20437,6 +20466,7 @@ https://doh-home.onedns.net/dns-query
 [/newhentai.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/newhighlandvision.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/newi.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/newindianexpress.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/newipnow.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/newisiknowledge.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/newlandmagazine.com.au/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -20469,6 +20499,7 @@ https://doh-home.onedns.net/dns-query
 [/news.ycombinator.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/news1.kr/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/news100.com.tw/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/news18.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/newsadds.com.au/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/newsamerica.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/newsancai.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -21706,6 +21737,7 @@ https://doh-home.onedns.net/dns-query
 [/onxxxvideo.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/oocdtp.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ood.opsource.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/oojj.de/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ooni.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/oopsforum.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ootbstudio.co.kr/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -21729,7 +21761,6 @@ https://doh-home.onedns.net/dns-query
 [/opencollective.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/opencreate.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/opendemocracy.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
-[/opendesktop.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/opendn.xyz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/opendroneid.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/opened.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -22554,6 +22585,7 @@ https://doh-home.onedns.net/dns-query
 [/picasaweb.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/picasaweb.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/picasaweb.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/picgo.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/pichunter.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/picidae.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/picjs.xyz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -23363,6 +23395,7 @@ https://doh-home.onedns.net/dns-query
 [/presentation.new/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/presentationzen.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/presidencylondoncollege.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/president.ir/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/presidentlee.tw/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/press.vin/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/prestige-av.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -23591,6 +23624,7 @@ https://doh-home.onedns.net/dns-query
 [/pure18.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/pureapk.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/pureconcepts.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/puredns.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/pureinsight.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/purelov5.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/purelyceleb.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -23885,6 +23919,7 @@ https://doh-home.onedns.net/dns-query
 [/radiovaticana.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/radiovncr.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/radiyoyacuvoa.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/radmin-vpn.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/rae.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/rael.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/raft.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -24635,6 +24670,7 @@ https://doh-home.onedns.net/dns-query
 [/rutherford.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/rutlandcollege.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/rutracker.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/rutracker.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/rutube.ru/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ruvideos.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/ruyiseek.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -25748,6 +25784,7 @@ https://doh-home.onedns.net/dns-query
 [/simplenote.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/simpleproductivityblog.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/simpleswap.io/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/simplex.chat/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/simplify.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/simplifycommerce.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/simply-hentai.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -26595,6 +26632,7 @@ https://doh-home.onedns.net/dns-query
 [/stak.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/stamford.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/stamfordparktrust.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/standard.co.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/standardsuniversity.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/standupfortibet.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/standwithhk.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -26850,6 +26888,7 @@ https://doh-home.onedns.net/dns-query
 [/storj.io/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/storm.mg/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/stormmediagroup.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/storry.tv/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/storyful.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/stourbridge.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/stow.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -26977,6 +27016,7 @@ https://doh-home.onedns.net/dns-query
 [/su/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/sub147.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/subacme.rerouted.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/subhd.tv/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/sublimedirectory.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/sublimetext.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/submarin.online/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -27271,7 +27311,6 @@ https://doh-home.onedns.net/dns-query
 [/sysresccd.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/systemicrisk.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/sytes.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
-[/syx86.cn/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/syx86.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/syzbj36.xyz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/sz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -27777,6 +27816,7 @@ https://doh-home.onedns.net/dns-query
 [/theguardian.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/theguardiandns.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/thehabibshow.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/thehansindia.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/thehealthsite.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/thehenleycollege.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/thehentaiworld.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -27949,6 +27989,7 @@ https://doh-home.onedns.net/dns-query
 [/thottok.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/thotvids.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/threadreaderapp.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/threads.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/threads.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/threatchaos.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/thri.xxx/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -29252,6 +29293,7 @@ https://doh-home.onedns.net/dns-query
 [/up.gcp.googlers.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/up01.cc/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/upa.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/upbit.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/update.crashlytics.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/updates.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/updates.tdesktop.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -31340,6 +31382,8 @@ https://doh-home.onedns.net/dns-query
 [/wwwwebay.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/wwwxoom.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/wxoyt.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/wxw.cat/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/wxw.moe/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/wyams.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/wyke.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/wylln.ac.uk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -31503,6 +31547,7 @@ https://doh-home.onedns.net/dns-query
 [/xiaoshuobb.life/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/xiaoyaoge.xyz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/xiaxiaoqiang.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/xicons.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/xie56.xyz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/xiezhua.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/xihua.es/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -32133,6 +32178,7 @@ https://doh-home.onedns.net/dns-query
 [/yandexcloud.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/yanghengjun.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/yangjianli.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/yangzhi.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/yantaqu.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/yaohubaba.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/yaoimangaonline.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -32604,9 +32650,14 @@ https://doh-home.onedns.net/dns-query
 [/yysub.net/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/yzld188.top/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/yzzk.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/z-lib.fm/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/z-lib.fo/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/z-lib.gd/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/z-lib.gl/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/z-lib.io/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/z-lib.org/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/z-library.se/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/z-library.sk/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/z00.world/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/z18r.co/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/z18r.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
@@ -32750,6 +32801,7 @@ https://doh-home.onedns.net/dns-query
 [/zndsk.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/zobry.site/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/zodgame.us/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
+[/zodgame.xyz/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/zoho.com/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/zoho.com.au/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
 [/zoho.eu/]https://basic.rethinkdns.com:443 https://wikimedia-dns.org:443/dns-query tls://e858b2.dns.nextdns.io quic://e858b2.dns.nextdns.io
