@@ -5,32 +5,32 @@ on:
     - cron: '0 0 * * *'  # 每天 UTC 时间 0 点运行，即北京时间 8 点
   workflow_dispatch:  # 允许手动触发
   push:
-push:
-  paths:
-    - 'config/**'  # 当配置文件发生变化时触发
-    - 'scripts/**'  # 当脚本文件发生变化时触发
-
+    paths:
+      - 'config/**'  # 当配置文件发生变化时触发
+      - 'scripts/**'  # 当脚本文件发生变化时触发
 
 jobs:
   update:
     runs-on: ubuntu-latest
     permissions:
       contents: write  # 关键！允许写入仓库
-    
+
     steps:
       - name: 检出代码
         uses: actions/checkout@v3
-      
+        with:
+          fetch-depth: 0  # 完整拉取历史记录，避免git操作问题
+
       - name: 设置Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      
+
       - name: 安装依赖
         run: |
           python -m pip install --upgrade pip
           pip install pyyaml
-      
+
       - name: 创建必要的目录和文件
         run: |
           mkdir -p config dist
@@ -47,24 +47,36 @@ jobs:
           # 创建自定义域名文件（如果不存在）
           touch config/custom_cn_domains.txt
           touch config/custom_foreign_domains.txt
-      
+          touch config/README.md  # 新增说明文件，方便维护
+
       - name: 生成配置文件
         run: |
           python scripts/generate_config.py
-      
+
       - name: 转换为QuanX格式
         run: |
-          python scripts/domain_to_quanx.py  # 新增运行QuanX格式转换脚本
-      
-      - name: 提交更新
+          python scripts/domain_to_quanx.py  # 运行QuanX格式转换脚本
+
+      - name: 提交更新（优化版）
         run: |
+          # 配置Git用户信息
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add dist/*
-          git diff --quiet && git diff --staged --quiet || git commit -m "自动更新域名列表 $(date +'%Y-%m-%d')"
-      
-      - name: 推送更新
-        uses: ad-m/github-push-action@master
+          
+          # 添加所有变更文件
+          git add .
+          
+          # 检查是否有变更，避免空提交
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "没有检测到变更，跳过提交"
+          else
+            # 生成带时间戳的提交信息
+            git commit -m "自动更新域名列表 $(date +'%Y-%m-%d %H:%M:%S')"
+          fi
+
+      - name: 推送更新（优化版）
+        uses: ad-m/github-push-action@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          branch: ${{ github.ref_name }}  # 使用更规范的分支引用
+          force: false  # 禁用强制推送，避免意外覆盖
