@@ -5,7 +5,7 @@
 域名转换脚本（统一从dist目录读取国内外域名）
 功能：
 1. 从dist/cn_domains.txt提取域名，生成QuanX白名单（DIRECT）
-2. 从dist/foreign_domains.txt提取域名，生成QuanX规则（proxy）
+2. 合并dist/foreign_domains.txt和config/custom_foreign_domains.txt的域名，生成QuanX规则（proxy）
 格式：host-suffix, 域名, 策略
 """
 
@@ -13,14 +13,14 @@ import re
 import os
 
 def extract_domains(file_path, policy):
-    """从dist目录提取域名并处理格式"""
+    """从文件提取域名并处理格式"""
     domains = set()
     full_path = os.path.join("dist", file_path)
     
     try:
         if not os.path.exists(full_path):
             print(f"警告：文件 {full_path} 不存在，跳过处理")
-            return []
+            return set()
         
         with open(full_path, 'r', encoding='utf-8') as f:
             for line in f:
@@ -40,11 +40,11 @@ def extract_domains(file_path, policy):
     
     except Exception as e:
         print(f"处理文件时出错：{e}")
-    return sorted(domains)
+    return domains
 
 def generate_quanx_rules(domains, policy):
     """生成QuanX规则"""
-    return [f"host-suffix, {domain}, {policy}" for domain in domains]
+    return [f"host-suffix, {domain}, {policy}" for domain in sorted(domains)]
 
 def save_rules(domains, policy, output_file):
     """保存规则到dist目录"""
@@ -67,9 +67,16 @@ def main():
     cn_domains = extract_domains("cn_domains.txt", "DIRECT")
     save_rules(cn_domains, "DIRECT", "quanx_whitelist.txt")
     
-    # 处理国外域名（生成proxy规则，从dist目录读取）
-    foreign_domains = extract_domains("foreign_domains.txt", "proxy")
-    save_rules(foreign_domains, "proxy", "foreign_quanx_rules.txt")
+    # 处理国外域名（合并两个文件并去重）
+    foreign_domains = set()
+    foreign_domains.update(extract_domains("foreign_domains.txt", "proxy"))
+    custom_path = os.path.join("config", "custom_foreign_domains.txt")
+    foreign_domains.update(extract_domains(custom_path, "proxy"))
+    
+    if foreign_domains:
+        save_rules(foreign_domains, "proxy", "foreign_quanx_rules.txt")
+    else:
+        print("警告：国外域名合并后无有效数据，未生成规则文件")
 
 if __name__ == "__main__":
     main()
