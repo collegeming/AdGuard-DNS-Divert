@@ -3,7 +3,7 @@
 
 """
 域名提取转换脚本（修复dist文件夹路径）
-功能：从dist/gn.txt文件中提取域名，转换为QuanX白名单格式
+功能：从dist/cn_domains.txt文件中提取域名，转换为QuanX白名单格式
 格式：host-suffix, 域名, DIRECT
 """
 
@@ -66,7 +66,7 @@ def save_rules_to_file(rules, output_file):
         print(f"保存文件时出错：{e}")
 
 def main():
-    input_file = "gn.txt"  # 输入文件名
+    input_file = "cn_domains.txt"  # 输入文件名
     output_file = "quanx_whitelist.txt"  # 输出文件名
     
     print(f"正在从 dist/{input_file} 提取域名...")
