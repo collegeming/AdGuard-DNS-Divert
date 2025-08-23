@@ -2,7 +2,7 @@ name: 更新域名列表
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天 UTC 0点运行（北京时间8点）
+    - cron: '0 0 * * *'  # 每天 UTC 时间 0 点运行，即北京时间 8 点
   workflow_dispatch:  # 允许手动触发
   push:
     paths:
@@ -12,7 +12,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # 允许写入仓库
+      contents: write  # 关键！允许写入仓库
     
     steps:
       - name: 检出代码
@@ -26,47 +26,26 @@ jobs:
       - name: 安装依赖
         run: |
           python -m pip install --upgrade pip
-          pip install pyyaml  # 原依赖
-          pip install regex  # 新增：确保正则表达式支持
+          pip install pyyaml
       
       - name: 创建必要的目录和文件
         run: |
-          mkdir -p config dist scripts
-          # 创建默认文件（如果不存在）
+          mkdir -p config dist
+          # 创建默认的国内DNS服务器文件（如果不存在）
           if [ ! -f config/cn_dns.txt ]; then
             echo "https://doh.pub/dns-query" > config/cn_dns.txt
             echo "https://dns.alidns.com/dns-query" >> config/cn_dns.txt
           fi
+          # 创建默认的国外DNS服务器文件（如果不存在）
           if [ ! -f config/foreign_dns.txt ]; then
             echo "https://1.1.1.1/dns-query" > config/foreign_dns.txt
             echo "https://8.8.8.8/dns-query" >> config/foreign_dns.txt
           fi
+          # 创建自定义域名文件（如果不存在）
           touch config/custom_cn_domains.txt
           touch config/custom_foreign_domains.txt
-          # 新增：确保脚本存在
-          if [ ! -f scripts/domain_to_quanx.py ]; then
-            echo "# Python脚本占位" > scripts/domain_to_quanx.py
-          fi
-
-      - name: 生成gn.txt（假设由其他脚本生成，需替换为实际生成逻辑）
-        run: |
-          # 示例：假设从配置文件生成gn.txt（需根据实际生成逻辑修改）
-          cat config/custom_cn_domains.txt config/other_domains.txt > dist/gn.txt
-          # 或使用Python脚本生成
-          python scripts/generate_gn.py  # 若有独立生成脚本
-          echo "已生成 dist/gn.txt"
-          ls -la dist/
-
-      - name: 运行domain_to_quanx.py转换规则
-        run: |
-          # 确保脚本有执行权限
-          chmod +x scripts/domain_to_quanx.py
-          # 运行脚本（假设脚本路径为scripts/domain_to_quanx.py）
-          python scripts/domain_to_quanx.py
-          echo "已生成QuanX白名单规则"
-          ls -la dist/
-
-      - name: 生成配置文件（原步骤，假设仍需执行）
+      
+      - name: 生成配置文件
         run: |
           python scripts/generate_config.py
       
@@ -74,7 +53,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add dist/* config/* scripts/*
+          git add dist/*
           git diff --quiet && git diff --staged --quiet || git commit -m "自动更新域名列表 $(date +'%Y-%m-%d')"
       
       - name: 推送更新
