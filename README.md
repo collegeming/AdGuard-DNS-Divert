@@ -1,8 +1,8 @@
 # AdGuard DNS Divert
-<div align="center">
-  <!-- 访客计数，点击跳转到仓库主页 -->
-你是第 <img src="https://profile-counter.glitch.me/qq5460168-AdGuard-DNS-Divert/count.svg" alt="访客计数" /> 位访客
-</div>
+<span id="busuanzi_container_site_uv">
+  你是第 <span id="busuanzi_value_site_uv"></span> 位访客
+</span>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 AdGuard DNS Divert 项目为 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) 用户提供的一套**基于域名分类分流国内外 DNS**的轻量级方案，提升访问速度、保护隐私，并优化解析体验。
