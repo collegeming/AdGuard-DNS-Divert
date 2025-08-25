@@ -1,97 +1,94 @@
-- name: 推送更新（官方 API 方案 - 修正版）
-  uses: actions/github-script@v6
-  if: github.ref_type == 'branch'
-  with:
-    github-token: ${{ secrets.GITHUB_TOKEN }}
-    script: |
-      // 获取当前分支名称
-      const branch = context.ref.replace('refs/heads/', '');
-      if (!branch) {
-        console.log('非分支环境，跳过推送');
-        return;
-      }
-      
-      // 获取最新提交 SHA
-      try {
-        const defaultBranchResponse = await github.rest.repos.get({
-          owner: context.repo.owner,
-          repo: context.repo.repo
-        });
-        const defaultBranch = defaultBranchResponse.data.default_branch;
-        const refResponse = await github.rest.git.getRef({
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          ref: `heads/${defaultBranch}`
-        });
-        const latestSha = refResponse.data.object.sha;
-      } catch (error) {
-        console.log('获取最新提交失败，使用当前上下文 SHA');
-        const latestSha = context.sha;
-      }
-      
-      // 检查是否有文件变更（通过获取目录树）
-      try {
-        const treeResponse = await github.rest.git.getTree({
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          tree_sha: latestSha,
-          recursive: 1  // 递归获取所有文件
-        });
-        const remoteFiles = new Set(treeResponse.data.tree.map(item => item.path));
-        
-        // 本地变更文件需通过其他方式获取（此处简化为示例）
-        // 实际项目中应通过 `git diff` 或读取工作区文件获取变更列表
-        const localFiles = new Set();
-        // 示例：假设所有 .txt 文件有变更
-        const changedFiles = ['config/cn_dns.txt', 'dist/quanx.conf'];
-        
-        // 比较远程与本地文件差异
-        const hasChanges = changedFiles.some(file => !remoteFiles.has(file));
-        
-        if (!hasChanges) {
-          console.log('没有检测到变更，跳过推送');
-          return;
-        }
-        
-        // 创建新树（实际项目中需填充文件内容）
-        const tree = [];
-        changedFiles.forEach(file => {
-          // 示例：读取本地文件内容并编码为 base64
-          // 实际需根据文件路径读取工作区内容
-          const content = '示例文件内容';
-          tree.push({
-            path: file,
-            mode: '100644',
-            type: 'blob',
-            content: Buffer.from(content).toString('base64')
-          });
-        });
-        
-        const treeResponse = await github.rest.git.createTree({
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          base_tree: latestSha,
-          tree: tree
-        });
-        
-        // 创建新提交
-        const commitResponse = await github.rest.git.createCommit({
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          message: `自动更新域名列表 ${new Date().toISOString()}`,
-          tree: treeResponse.data.sha,
-          parents: [latestSha]
-        });
-        
-        // 推送更新到分支
-        await github.rest.git.updateRef({
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          ref: `heads/${branch}`,
-          sha: commitResponse.data.sha
-        });
-        
-        console.log('推送更新成功');
-      } catch (error) {
-        console.error('推送过程中出错:', error);
-      }
+name: 更新域名列表
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天 UTC 0 点运行（北京时间 8 点）
+  workflow_dispatch:  # 允许手动触发
+  push:
+    paths:
+      - 'config/**'  # 配置文件变更时触发
+      - 'scripts/**'  # 脚本文件变更时触发
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 必要权限：允许写入仓库
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 拉取完整历史记录，避免 Git 问题
+
+      - name: 设置 Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: 创建必要的目录和文件
+        run: |
+          mkdir -p config dist
+          # 默认国内 DNS 服务器（若不存在则创建）
+          if [ ! -f config/cn_dns.txt ]; then
+            echo "https://doh.pub/dns-query" > config/cn_dns.txt
+            echo "https://dns.alidns.com/dns-query" >> config/cn_dns.txt
+          fi
+          # 默认国外 DNS 服务器（若不存在则创建）
+          if [ ! -f config/foreign_dns.txt ]; then
+            echo "https://1.1.1.1/dns-query" > config/foreign_dns.txt
+            echo "https://8.8.8.8/dns-query" >> config/foreign_dns.txt
+          fi
+          # 自定义域名文件（若不存在则创建）
+          touch config/custom_cn_domains.txt config/custom_foreign_domains.txt
+          # 新增说明文件
+          cat > config/README.md << 'EOF'
+          # 域名列表配置说明
+          - cn_dns.txt: 国内 DNS 服务器（DoH 格式）
+          - foreign_dns.txt: 国外 DNS 服务器（DoH 格式）
+          - custom_cn_domains.txt: 自定义国内域名（每行一个）
+          - custom_foreign_domains.txt: 自定义国外域名（每行一个）
+          EOF
+
+      - name: 生成配置文件
+        run: |
+          python scripts/generate_config.py || echo "配置生成脚本执行失败，跳过后续转换"
+
+      - name: 转换为 QuanX 格式（可选）
+        run: |
+          if [ -f "scripts/domain_to_quanx.py" ]; then
+            python scripts/domain_to_quanx.py
+          else
+            echo "QuanX 转换脚本不存在，跳过此步骤"
+          fi
+
+      - name: 提交更新（增强版）
+        run: |
+          # 配置 Git 用户信息
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # 添加所有变更文件（包括未跟踪文件）
+          git add .
+          
+          # 检查是否有变更（含未跟踪文件）
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "没有检测到变更，跳过提交"
+          else
+            # 生成带时间戳的提交信息
+            git commit -m "自动更新域名列表 $(date +'%Y-%m-%d %H:%M:%S')" || echo "提交失败（可能无文件变更）"
+          fi
+
+      - name: 推送更新（使用社区兼容动作）
+        uses: peaceiris/actions-github-push@v3  # 社区稳定动作，替代原方案
+        if: github.ref_type == 'branch'  # 仅在分支环境推送
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: "自动更新域名列表 $(date +'%Y-%m-%d %H:%M:%S')"
+          branch: ${{ github.ref_name }}
+          force: false  # 禁用强制推送
