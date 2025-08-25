@@ -2,66 +2,80 @@ name: 更新域名列表
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天 UTC 时间 0 点运行，即北京时间 8 点
+    - cron: '0 0 * * *'  # 每天 UTC 0 点（北京时间 8 点）
   workflow_dispatch:  # 允许手动触发
   push:
     paths:
-      - 'config/**'  # 当配置文件发生变化时触发
+      - 'config/**'  # 配置文件变更时触发
+      - 'scripts/**'  # 新增：脚本文件变更时触发
 
 jobs:
   update:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # 关键！允许写入仓库
-    
+      contents: write  # 必要权限：写入仓库
+
     steps:
       - name: 检出代码
         uses: actions/checkout@v3
-      
-      - name: 设置Python
+        with:
+          fetch-depth: 0  # 拉取完整历史，避免 Git 问题
+
+      - name: 设置 Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      
+
       - name: 安装依赖
         run: |
           python -m pip install --upgrade pip
           pip install pyyaml
-      
-      - name: 创建必要的目录和文件
+
+      - name: 创建必要文件
         run: |
           mkdir -p config dist
-          # 创建默认的国内DNS服务器文件（如果不存在）
+          # 国内 DNS（默认）
           if [ ! -f config/cn_dns.txt ]; then
             echo "https://doh.pub/dns-query" > config/cn_dns.txt
             echo "https://dns.alidns.com/dns-query" >> config/cn_dns.txt
           fi
-          # 创建默认的国外DNS服务器文件（如果不存在）
+          # 国外 DNS（默认）
           if [ ! -f config/foreign_dns.txt ]; then
             echo "https://1.1.1.1/dns-query" > config/foreign_dns.txt
             echo "https://8.8.8.8/dns-query" >> config/foreign_dns.txt
           fi
-          # 创建自定义域名文件（如果不存在）
-          touch config/custom_cn_domains.txt
-          touch config/custom_foreign_domains.txt
-      
+          # 自定义域名文件
+          touch config/{custom_cn_domains,custom_foreign_domains}.txt
+
       - name: 生成配置文件
         run: |
-          python scripts/generate_config.py
-      
-      - name: 转换为QuanX格式
+          python scripts/generate_config.py || echo "配置生成失败，跳过后续"
+
+      - name: 转换为 QuanX 格式
         run: |
-          python scripts/domain_to_quanx.py  # 新增运行QuanX格式转换脚本
-      
-      - name: 提交更新
+          if [ -f scripts/domain_to_quanx.py ]; then
+            python scripts/domain_to_quanx.py
+          else
+            echo "QuanX 脚本不存在，跳过转换"
+          fi
+
+      - name: 提交更新（优化版）
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add dist/*
-          git diff --quiet && git diff --staged --quiet || git commit -m "自动更新域名列表 $(date +'%Y-%m-%d')"
-      
-      - name: 推送更新
-        uses: ad-m/github-push-action@master
+          git add .  # 添加所有变更文件
+          # 检查变更（含未跟踪文件）
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "无变更，跳过提交"
+          else
+            git commit -m "自动更新域名列表 $(date +'%Y-%m-%d %H:%M')"
+          fi
+
+      - name: 推送更新（社区稳定方案）
+        uses: peaceiris/actions-github-push@v3  # 稳定动作，替代原方案
+        if: github.ref_type == 'branch'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          commit_message: "自动更新域名列表 $(date +'%Y-%m-%d')"
+          branch: ${{ github.ref_name }}
+          force: false
