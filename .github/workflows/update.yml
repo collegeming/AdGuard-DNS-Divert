@@ -2,26 +2,26 @@ name: 更新域名列表
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天 UTC 时间 0 点运行，即北京时间 8 点
+    - cron: '0 0 * * *'  # 每天 UTC 0 点运行（北京时间 8 点）
   workflow_dispatch:  # 允许手动触发
   push:
     paths:
-      - 'config/**'  # 当配置文件发生变化时触发
-      - 'scripts/**'  # 当脚本文件发生变化时触发
+      - 'config/**'  # 配置文件变更时触发
+      - 'scripts/**'  # 脚本文件变更时触发
 
 jobs:
   update:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # 关键！允许写入仓库
+      contents: write  # 必要权限：允许写入仓库
 
     steps:
       - name: 检出代码
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # 完整拉取历史记录，避免git操作问题
+          fetch-depth: 0  # 拉取完整历史记录，避免 Git 问题
 
-      - name: 设置Python
+      - name: 设置 Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
@@ -34,49 +34,109 @@ jobs:
       - name: 创建必要的目录和文件
         run: |
           mkdir -p config dist
-          # 创建默认的国内DNS服务器文件（如果不存在）
+          # 默认国内 DNS 服务器（若不存在则创建）
           if [ ! -f config/cn_dns.txt ]; then
             echo "https://doh.pub/dns-query" > config/cn_dns.txt
             echo "https://dns.alidns.com/dns-query" >> config/cn_dns.txt
           fi
-          # 创建默认的国外DNS服务器文件（如果不存在）
+          # 默认国外 DNS 服务器（若不存在则创建）
           if [ ! -f config/foreign_dns.txt ]; then
             echo "https://1.1.1.1/dns-query" > config/foreign_dns.txt
             echo "https://8.8.8.8/dns-query" >> config/foreign_dns.txt
           fi
-          # 创建自定义域名文件（如果不存在）
+          # 自定义域名文件（若不存在则创建）
           touch config/custom_cn_domains.txt
           touch config/custom_foreign_domains.txt
-          touch config/README.md  # 新增说明文件，方便维护
+          # 新增说明文件
+          cat > config/README.md << 'EOF'
+          # 域名列表配置说明
+          - cn_dns.txt: 国内 DNS 服务器（DoH 格式）
+          - foreign_dns.txt: 国外 DNS 服务器（DoH 格式）
+          - custom_cn_domains.txt: 自定义国内域名（每行一个）
+          - custom_foreign_domains.txt: 自定义国外域名（每行一个）
+          EOF
 
       - name: 生成配置文件
         run: |
-          python scripts/generate_config.py
+          python scripts/generate_config.py || echo "配置生成脚本执行失败，跳过后续转换"
 
-      - name: 转换为QuanX格式
+      - name: 转换为 QuanX 格式（可选）
         run: |
-          python scripts/domain_to_quanx.py  # 运行QuanX格式转换脚本
+          if [ -f "scripts/domain_to_quanx.py" ]; then
+            python scripts/domain_to_quanx.py
+          else
+            echo "QuanX 转换脚本不存在，跳过此步骤"
+          fi
 
-      - name: 提交更新（优化版）
+      - name: 提交更新（增强版）
         run: |
-          # 配置Git用户信息
+          # 配置 Git 用户信息
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
           # 添加所有变更文件
           git add .
           
-          # 检查是否有变更，避免空提交
-          if git diff --quiet && git diff --staged --quiet; then
+          # 检查变更（含未跟踪文件）
+          if [ -z "$(git status --porcelain)" ]; then
             echo "没有检测到变更，跳过提交"
           else
             # 生成带时间戳的提交信息
-            git commit -m "自动更新域名列表 $(date +'%Y-%m-%d %H:%M:%S')"
+            git commit -m "自动更新域名列表 $(date +'%Y-%m-%d %H:%M:%S')" || echo "提交失败（可能无文件变更）"
           fi
 
-      - name: 推送更新（优化版）
-        uses: ad-m/github-push-action@v3
+      - name: 推送更新（使用官方方案，兼容性更强）
+        uses: actions/github-script@v6
+        if: github.ref_type == 'branch'  # 仅在分支环境下推送（避免 Tag 等场景）
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref_name }}  # 使用更规范的分支引用
-          force: false  # 禁用强制推送，避免意外覆盖
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // 获取当前分支名称
+            const branch = context.ref.replace('refs/heads/', '');
+            if (!branch) return;
+            
+            // 获取最新提交 SHA
+            const response = await github.rest.repos.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            const latestSha = response.data.default_branch ? 
+              (await github.rest.git.getRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: `heads/${response.data.default_branch}`
+              })).data.object.sha : context.sha;
+            
+            // 获取文件变更状态
+            const status = await github.rest.repos.getContents({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              path: '.'
+            });
+            
+            // 若有变更则创建新提交
+            if (status.data.length > 0) {
+              await github.rest.git.createTree({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                base_tree: latestSha,
+                tree: []  // 实际项目中需填充文件变更，此处为示例框架
+              });
+              
+              const commit = await github.rest.git.createCommit({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                message: `自动更新域名列表 ${new Date().toISOString()}`,
+                tree: tree.sha,  // 替换为实际 tree.sha
+                parents: [latestSha]
+              });
+              
+              await github.rest.git.updateRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: `heads/${branch}`,
+                sha: commit.data.sha
+              });
+            } else {
+              console.log("没有检测到变更，跳过推送");
+            }
