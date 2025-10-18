@@ -155,7 +155,7 @@ def generate_whitelist_config_single(cn_domains, foreign_domains, cn_dns, foreig
 def generate_blacklist_config_grouped_by_5000(cn_domains, foreign_domains, cn_dns, foreign_dns,
                                             custom_domain_dns_grouped=None, custom_patterns=None):
     config_lines = []
-    config_lines.append("# AdGuard Home DNS 分流配置 - 黑名单模式（分组输出）")
+    config_lines.append("# AdGuard Home DNS 分流配置 - 黑名单模式（5000分组输出）")
     config_lines.append(f"# 自动生成于 {now_beijing()}")
     config_lines.append("# 黑名单模式：命中国外域名走国外DNS，其他走国内DNS")
     if custom_domain_dns_grouped:
@@ -168,20 +168,12 @@ def generate_blacklist_config_grouped_by_5000(cn_domains, foreign_domains, cn_dn
         config_lines.append(dns)
     config_lines.append("")
 
-    # 自定义域名规则（分组合并）
     if custom_domain_dns_grouped:
         config_lines.append("#" + "="*50)
-        config_lines.append(f"# 自定义域名DNS规则（分组合并输出）")
+        config_lines.append(f"# 自定义域名DNS规则（逐条规则输出）")
         config_lines.append("#" + "="*50)
-        for group in custom_domain_dns_grouped:
-            if len(group) >= 2:
-                domains = group[0]
-                dns_list = group[1]
-                domains_str = '/'.join(domains)
-                dns_str = ' '.join(dns_list)
-                config_lines.append(f"[/{domains_str}/] {dns_str}")
-            else:
-                print(f"警告：自定义域名组格式不正确: {group}")
+        for domain, dns_list in sorted(custom_domain_dns_grouped.items()):
+            config_lines.append(f"[/{domain}/]{' '.join(dns_list)}")
         config_lines.append("")
 
     # 处理国外域名（按5000条分组）
