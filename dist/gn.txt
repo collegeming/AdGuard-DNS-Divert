@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 白名单模式（逐条规则）
-# 自动生成于 2025-10-17 08:40:09
+# 自动生成于 2025-10-18 08:37:22
 # 白名单模式：命中国内域名走国内DNS，其他走国外DNS
 # 包含自定义域名DNS规则
 
@@ -65,7 +65,7 @@ quic://e858b2.dns.nextdns.io
 [/youku.com/]https://dns.alidns.com/dns-query
 
 #==================================================
-# 国内域名规则（共 116649 个域名，逐条规则）
+# 国内域名规则（共 116650 个域名，逐条规则）
 # 已排除 27 个自定义DNS域名（含通配符模糊覆盖）
 #==================================================
 [/0.zone/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
@@ -67063,6 +67063,7 @@ quic://e858b2.dns.nextdns.io
 [/medeming.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
 [/media.fantv.hk/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
 [/media.joycorp.co.kr/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
+[/media.trrtv.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
 [/mediaprima.rastream.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
 [/mediastory.cc/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
 [/mediatek.com/]https://dns.alidns.com/dns-query https://doh.360.cn/dns-query https://1.12.12.12/dns-query https://doh-home.onedns.net/dns-query
