@@ -299,14 +299,48 @@ def generate_blacklist_config_grouped(cn_domains, foreign_domains, cn_dns, forei
     return '\n'.join(config_lines)
 
 def is_valid_domain(domain):
-    """验证域名格式是否合法"""
+    """严格验证域名格式是否合法"""
     # 空域名无效
+    if not domain or domain.strip() == "":
+        return False
+    
+    # 移除开头和结尾的点
+    domain = domain.strip().lstrip('.').rstrip('.')
     if not domain:
         return False
-
-    # 正则表达式验证域名格式
-    pattern = r"^(?!-)[A-Za-z0-9-]{1,63}(?<!-)(\.[A-Za-z0-9-]{1,63})*\.?$"
-    return re.match(pattern, domain) is not None
+    
+    # 检查是否包含非法字符
+    if re.search(r"[^a-zA-Z0-9\-\.]", domain):
+        return False
+    
+    # 检查标签格式
+    labels = domain.split('.')
+    for label in labels:
+        # 标签不能为空
+        if not label:
+            return False
+        
+        # 标签长度限制 (1-63字符)
+        if len(label) < 1 or len(label) > 63:
+            return False
+        
+        # 标签不能以连字符开头或结尾
+        if label.startswith('-') or label.endswith('-'):
+            return False
+    
+    # 顶级域名不能以连字符结尾
+    if labels[-1].endswith('-'):
+        return False
+    
+    # 顶级域名必须至少包含2个字符
+    if len(labels[-1]) < 2:
+        return False
+    
+    # 整个域名长度不能超过253字符
+    if len(domain) > 253:
+        return False
+    
+    return True
 
 def remove_duplicates_in_list(domains):
     initial_count = len(domains)
