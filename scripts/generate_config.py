@@ -299,9 +299,22 @@ def generate_blacklist_config_grouped(cn_domains, foreign_domains, cn_dns, forei
 
 def remove_duplicates_in_list(domains):
     initial_count = len(domains)
-    unique_domains = set(domains)
+    
+    # 处理域名：移除开头的点
+    cleaned_domains = []
+    for domain in domains:
+        # 移除开头的点
+        if domain.startswith('.'):
+            domain = domain[1:]
+        cleaned_domains.append(domain)
+    
+    # 去重处理
+    unique_domains = set(cleaned_domains)
+    
+    # 记录去重信息
     if len(unique_domains) < initial_count:
         logger.info(f"从列表中移除了 {initial_count - len(unique_domains)} 个重复域名")
+    
     return unique_domains
 
 def read_domains_from_file(file_path):
