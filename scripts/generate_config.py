@@ -297,23 +297,48 @@ def generate_blacklist_config_grouped(cn_domains, foreign_domains, cn_dns, forei
         config_lines.append(f"[/{domains_str}/] {dns_str}")
     return '\n'.join(config_lines)
 
+def is_valid_domain(domain):
+    """验证域名格式是否合法"""
+    # 空域名无效
+    if not domain:
+        return False
+    
+    # 正则表达式验证域名格式
+    pattern = r"^(?!-)[A-Za-z0-9-]{1,63}(?<!-)(\.[A-Za-z0-9-]{1,63})*\.?$"
+    return re.match(pattern, domain) is not None
+
 def remove_duplicates_in_list(domains):
     initial_count = len(domains)
+    valid_domains = []
+    invalid_domains = []
     
-    # 处理域名：移除开头的点
-    cleaned_domains = []
+    # 处理域名：移除开头的点并验证格式
     for domain in domains:
         # 移除开头的点
         if domain.startswith('.'):
             domain = domain[1:]
-        cleaned_domains.append(domain)
+        
+        # 验证域名格式
+        if is_valid_domain(domain):
+            valid_domains.append(domain)
+        else:
+            invalid_domains.append(domain)
+    
+    # 记录无效域名信息
+    if invalid_domains:
+        logger.warning(f"发现 {len(invalid_domains)} 个无效域名，已舍弃:")
+        for i, domain in enumerate(invalid_domains[:10]):  # 最多显示前10个
+            logger.warning(f"无效域名 #{i+1}: {domain}")
+        if len(invalid_domains) > 10:
+            logger.warning(f"... 及其他 {len(invalid_domains)-10} 个无效域名")
     
     # 去重处理
-    unique_domains = set(cleaned_domains)
+    unique_domains = set(valid_domains)
     
     # 记录去重信息
-    if len(unique_domains) < initial_count:
-        logger.info(f"从列表中移除了 {initial_count - len(unique_domains)} 个重复域名")
+    removed_duplicates = initial_count - len(unique_domains) - len(invalid_domains)
+    if removed_duplicates > 0:
+        logger.info(f"从列表中移除了 {removed_duplicates} 个重复域名")
     
     return unique_domains
 
