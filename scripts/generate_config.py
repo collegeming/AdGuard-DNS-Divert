@@ -173,9 +173,7 @@ def generate_blacklist_config_grouped_by_5000(cn_domains, foreign_domains, cn_dn
         config_lines.append("#" + "="*50)
         config_lines.append(f"# 自定义域名DNS规则（分组合并输出）")
         config_lines.append("#" + "="*50)
-        # 修复解包问题：使用更通用的遍历方式
         for group in custom_domain_dns_grouped:
-            # 确保每个组包含域名列表和DNS列表
             if len(group) >= 2:
                 domains = group[0]
                 dns_list = group[1]
@@ -183,24 +181,29 @@ def generate_blacklist_config_grouped_by_5000(cn_domains, foreign_domains, cn_dn
                 dns_str = ' '.join(dns_list)
                 config_lines.append(f"[/{domains_str}/] {dns_str}")
             else:
-                # 处理格式不正确的组
                 print(f"警告：自定义域名组格式不正确: {group}")
         config_lines.append("")
 
     # 处理国外域名（按5000条分组）
     foreign_domains_filtered = filter_domains(foreign_domains, custom_patterns) if custom_patterns else foreign_domains
 
+    # 将集合转换为列表以便切片操作
+    if isinstance(foreign_domains_filtered, set):
+        foreign_domains_list = sorted(foreign_domains_filtered)  # 排序以便结果可预测
+    else:
+        foreign_domains_list = foreign_domains_filtered
+
     config_lines.append("#" + "="*50)
-    config_lines.append(f"# 国外域名规则（共 {len(foreign_domains_filtered)} 个域名，按5000条分组）")
-    if custom_domain_dns_grouped and len(foreign_domains) != len(foreign_domains_filtered):
-        excluded_count = len(foreign_domains) - len(foreign_domains_filtered)
+    config_lines.append(f"# 国外域名规则（共 {len(foreign_domains_list)} 个域名，按5000条分组）")
+    if custom_domain_dns_grouped and len(foreign_domains) != len(foreign_domains_list):
+        excluded_count = len(foreign_domains) - len(foreign_domains_list)
         config_lines.append(f"# 已排除 {excluded_count} 个自定义DNS域名（含通配符模糊覆盖）")
     config_lines.append("#" + "="*50)
 
     # 按5000条分组处理国外域名
     batch_size = 5000
-    for i in range(0, len(foreign_domains_filtered), batch_size):
-        batch = foreign_domains_filtered[i:i+batch_size]
+    for i in range(0, len(foreign_domains_list), batch_size):
+        batch = foreign_domains_list[i:i+batch_size]
         domains_str = '/'.join(batch)
         dns_str = ' '.join(foreign_dns)
         config_lines.append(f"[/{domains_str}/] {dns_str}")
