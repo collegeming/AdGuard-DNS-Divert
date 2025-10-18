@@ -173,10 +173,18 @@ def generate_blacklist_config_grouped_by_5000(cn_domains, foreign_domains, cn_dn
         config_lines.append("#" + "="*50)
         config_lines.append(f"# 自定义域名DNS规则（分组合并输出）")
         config_lines.append("#" + "="*50)
-        for domains, dns_list in custom_domain_dns_grouped:
-            domains_str = '/'.join(domains)
-            dns_str = ' '.join(dns_list)
-            config_lines.append(f"[/{domains_str}/] {dns_str}")
+        # 修复解包问题：使用更通用的遍历方式
+        for group in custom_domain_dns_grouped:
+            # 确保每个组包含域名列表和DNS列表
+            if len(group) >= 2:
+                domains = group[0]
+                dns_list = group[1]
+                domains_str = '/'.join(domains)
+                dns_str = ' '.join(dns_list)
+                config_lines.append(f"[/{domains_str}/] {dns_str}")
+            else:
+                # 处理格式不正确的组
+                print(f"警告：自定义域名组格式不正确: {group}")
         config_lines.append("")
 
     # 处理国外域名（按5000条分组）
