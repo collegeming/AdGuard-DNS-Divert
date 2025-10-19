@@ -452,7 +452,7 @@ def main():
         for domain in sorted(cn_domains):
             f.write(f"{domain}\n")
     with open(os.path.join('dist', 'foreign_domains.txt'), 'w', encoding='utf-8') as f:
-        for domain in sorted(foreign_domains):
+        for domain in sorted(foreign_domains_for_blacklist):
             f.write(f"{domain}\n")
     if custom_domain_dns_map:
         with open(os.path.join('dist', 'custom_domain_dns_debug.txt'), 'w', encoding='utf-8') as f:
