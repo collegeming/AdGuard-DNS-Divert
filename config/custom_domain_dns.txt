@@ -17,7 +17,8 @@ steamcommunity.com/store.steampowered.com: https://185.222.222.222/dns-query, ht
 #jp: https://dns.google/dns-query
 
 # 其他特殊配置
-#bing.com: https://dns.alidns.com/dns-query, https://doh.360.cn/dns-query
+bing.com: https://doh.pub/dns-query
+a-0001.a-msedge.net: https://doh.pub/dns-query
 
 # 腾讯系域名组合（含通配符，需程序支持）
 wx.tenpay.com/qqgame.com/wegame.com/tenpay.com/foxmail.com.cn/im.qq.com/*.tencent.com/*.weixin.com/weixin.qq.com/*.qqmusic.com/*.video.qq.com/*.itravelqq.com/*.qq.com: https://doh.pub/dns-query

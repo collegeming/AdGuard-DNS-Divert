@@ -419,6 +419,8 @@ def main():
     # 自动排除 custom_cn_domains.txt 的域名（黑名单分流文件用）
     foreign_domains_for_blacklist = foreign_domains - custom_cn_domains_set
     logger.info(f"排除 custom_cn_domains.txt 后国外域名数量: {len(foreign_domains_for_blacklist)}")
+    foreign_domains_for_blacklist = foreign_domains_for_blacklist - cn_domains
+    logger.info(f"排除 cn_domains.txt 后国外域名数量: {len(foreign_domains_for_blacklist)}")
 
     # ==== 生成并保存4个分流文件 ====
     logger.info("生成白名单模式配置文件（逐条规则）...")
