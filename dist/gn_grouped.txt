@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 白名单模式
-# 自动生成于 2025-10-22 15:40:09
+# 自动生成于 2025-10-22 23:07:09
 # 白名单模式：命中国内域名走国内DNS，其他走国外DNS
 # 包含自定义域名DNS规则
 
@@ -8,7 +8,7 @@ https://dns.nextdns.io
 https://wikimedia-dns.org/dns-query
 https://dns.cloudflare.com/dns-query
 https://basic.rethinkdns.com
-https://dns.google/dns-query
+quic://dns.comss.one
 
 #==================================================
 # 自定义域名DNS规则（分组合并输出）
