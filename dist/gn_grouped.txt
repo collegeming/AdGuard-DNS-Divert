@@ -1,15 +1,17 @@
 # AdGuard Home DNS 分流配置 - 白名单模式
-# 自动生成于 2025-10-25 01:01:16
+# 自动生成于 2025-10-25 01:30:21
 # 白名单模式：命中国内域名走国内DNS，其他走国外DNS
 # 包含自定义域名DNS规则
 
 # 默认上游DNS服务器（国外）
 https://private.canadianshield.cira.ca/dns-query
-quic://[2a09:a707:169::]
-https://unfiltered.joindns4.eu/dns-query
+quic://doq.ffmuc.net
+https://resolver.dnsprivacy.org.uk/dns-query
 https://dns.mullvad.net/dns-query
-https://[2001:620:0:ff::2]/dns-query
+https://public.ns.nwps.fi/dns-query
 https://frd4wvnobp.cloudflare-gateway.com/dns-query
+tls://unicast.censurfridns.dk
+tls://p1.freedns.controld.com
 
 #==================================================
 # 自定义域名DNS规则（分组合并输出）
