@@ -1,5 +1,5 @@
 # AdGuard Home DNS 分流配置 - 白名单模式（逐条规则）
-# 自动生成于 2026-04-11 02:54:58
+# 自动生成于 2026-04-12 02:47:18
 # 白名单模式：命中国内域名走国内DNS，其他走国外DNS
 # 包含自定义域名DNS规则
 
@@ -34,7 +34,7 @@ tls://p1.freedns.controld.com
 [/wx.tenpay.com/]https://doh.pub/dns-query
 
 #==================================================
-# 国内域名规则（共 147996 个域名，逐条规则）
+# 国内域名规则（共 147935 个域名，逐条规则）
 # 已排除 63 个自定义DNS域名（含通配符模糊覆盖）
 #==================================================
 [/0-100.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -1347,7 +1347,6 @@ tls://p1.freedns.controld.com
 [/0771.tv/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/07712008.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/07715555555.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/07719999.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/0771bc.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/0771cts.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/0771cyts.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -3684,7 +3683,6 @@ tls://p1.freedns.controld.com
 [/197946.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/19799.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/197c.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/19809844e27095b4.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/198254.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/19831110.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/198358.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -5065,7 +5063,6 @@ tls://p1.freedns.controld.com
 [/302302.xyz/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/302423a641021.beer/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/3033c.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/303b4b97071880b4.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/303c.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/3044.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/30583a8b910261.beer/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -5199,7 +5196,6 @@ tls://p1.freedns.controld.com
 [/31mold.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/31myhome.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/31ns.info/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/31ppt.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/31pump.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/31rent.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/31rzp.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -6853,7 +6849,6 @@ tls://p1.freedns.controld.com
 [/4587c00611011.beer/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/458kq.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/459.org/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/45916666.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/45app.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/45eee.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/45fan.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -6908,7 +6903,6 @@ tls://p1.freedns.controld.com
 [/47462.org/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/47473.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/474b.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/47529.org/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/4765.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/47787.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/4779.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -9027,7 +9021,6 @@ tls://p1.freedns.controld.com
 [/582hr.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/583316.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/583go.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/5841.org/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/58416.org/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/5858.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/5858xs.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -10295,7 +10288,6 @@ tls://p1.freedns.controld.com
 [/6du.in/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/6duoyu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/6dvip.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/6e22d5e666c6dbf2.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/6e8a225320471153.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/6e8fe57151019.beer/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/6eat.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -10318,7 +10310,6 @@ tls://p1.freedns.controld.com
 [/6glz.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/6h979.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/6hd0hoc.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/6hezb.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/6hgame.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/6hudong.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/6huo.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -10577,7 +10568,6 @@ tls://p1.freedns.controld.com
 [/727380.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/7280.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/7298.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/7299tu75.cc/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/72bn.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/72book.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/72byte.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -10646,7 +10636,6 @@ tls://p1.freedns.controld.com
 [/73zw.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/73zw8.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/74.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/740863d6d4d1a15e.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/7412557.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/7415.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/741b0fca410271.beer/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -10764,7 +10753,6 @@ tls://p1.freedns.controld.com
 [/7724yx.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/7725.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/7729.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/772it.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/77304.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/77304y.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/77313.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -11249,7 +11237,6 @@ tls://p1.freedns.controld.com
 [/800you.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/800youhuo.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/801167.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/8014555.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/80166.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/802203.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/8025edaf81019.beer/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -12852,7 +12839,6 @@ tls://p1.freedns.controld.com
 [/9669.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/966zlnfjuza4oloh2bk.app/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/96711jmbm.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/967680.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/968.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/96804.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/96811.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -14271,7 +14257,6 @@ tls://p1.freedns.controld.com
 [/adtime.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/adtiming.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/adtmm.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/adttt.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/aduan.cc/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/adubest.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/aduer.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -16173,7 +16158,6 @@ tls://p1.freedns.controld.com
 [/alminecn.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/almondoy.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/alnan.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/alnanaluminium.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/alo7.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/aloha-ukulele.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/aloha.akamai.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -17752,7 +17736,6 @@ tls://p1.freedns.controld.com
 [/aqiyi.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/aqjx.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/aqjz.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/aqlengqueta.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/aqlife.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/aqniu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/aqpta.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -18173,7 +18156,6 @@ tls://p1.freedns.controld.com
 [/asleyu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/aslk2018.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/asls.space/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/aslvyou.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/aslzw.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/asm.org/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/asm64.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -21037,7 +21019,6 @@ tls://p1.freedns.controld.com
 [/beeui.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/beevideo.tv/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/beeweart.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/bef9782b822d9e00.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/befar.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/begcl.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/begeel.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -21416,7 +21397,6 @@ tls://p1.freedns.controld.com
 [/bestbeats4u.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/bestbeibao.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/bestblower.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/bestbrocciu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/bestcake.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/bestcdn.vip/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/bestcem.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -28214,7 +28194,6 @@ tls://p1.freedns.controld.com
 [/chawenti.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chawenyi.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chawo.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/chaxiaohao.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chaxiaow.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chaxinyu.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chaxun.biz/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -28558,7 +28537,6 @@ tls://p1.freedns.controld.com
 [/chengtongjz.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chengtu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chenguangblog.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/chengw.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chengwei.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chengweitx.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chengxiangqian.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -29248,7 +29226,6 @@ tls://p1.freedns.controld.com
 [/chinaccsi.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chinacct.org/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chinacdc.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/chinacdl.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chinacdnb2b.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chinacdnweb.qiniu.com.w.kunlunno.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/chinacelacforum.org/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -35800,7 +35777,6 @@ tls://p1.freedns.controld.com
 [/cqtlskj.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/cqtn.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/cqtnfs.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/cqtns.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/cqtqzx.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/cqtrans.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/cqtransit.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -39896,7 +39872,6 @@ tls://p1.freedns.controld.com
 [/dfcfw.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dfcms.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dfcx-bj.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/dfd608d3135509ae.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dfdaily.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dfdd-toubiaole.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dfddd.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -41448,7 +41423,6 @@ tls://p1.freedns.controld.com
 [/dnsrw.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dnss.me/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dnss.vip/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/dnssec-poison.xyz/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dnssina.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dnstest.vip/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dnstx88.cc/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -42687,6 +42661,7 @@ tls://p1.freedns.controld.com
 [/dubairen.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dubao123.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dubbing.tech/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
+[/dubbingx.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dubbo.io/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dubiwang.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/duble.live/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -43404,7 +43379,6 @@ tls://p1.freedns.controld.com
 [/dzdvip.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dzdxs.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dzdzzd.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/dzelec.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dzemotor.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dzfang.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/dzfc.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -46864,7 +46838,6 @@ tls://p1.freedns.controld.com
 [/faq-whtasapp.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/faq-whtasapp.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/faqianjia.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/faqingtie.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/faqiren.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/faqrobot.org/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/far-china.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -47655,7 +47628,6 @@ tls://p1.freedns.controld.com
 [/fenleitong.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/fenlekeji.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/fenliu.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/fenmach.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/fenmitech.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/fennessy.hk/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/fenqihome.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -49619,7 +49591,6 @@ tls://p1.freedns.controld.com
 [/futurescircle.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/futurescontest.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/futustatic.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/fututools.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/fututrade.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/fututrustee.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/fuwa.org/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -51777,7 +51748,6 @@ tls://p1.freedns.controld.com
 [/gfxcamp.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gfxtr1.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gfxy.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/gfyseed.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gfzihua.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gfzj.us/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gg-ev.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -52108,7 +52078,6 @@ tls://p1.freedns.controld.com
 [/githang.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/github-zh.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/github.do/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/github.site/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/githubim.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/githubshare.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/githubusercontents.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -53277,7 +53246,6 @@ tls://p1.freedns.controld.com
 [/goutanzi.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gouwanmei.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gouwu.sogou.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/gouwu3.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gouwubang.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gouwudang.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gouwuke.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -55640,7 +55608,6 @@ tls://p1.freedns.controld.com
 [/gxlbang.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gxlbbwg.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gxlbgf.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/gxlbgz.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gxlbi.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gxlbzszy.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gxlcclean.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -55843,7 +55810,6 @@ tls://p1.freedns.controld.com
 [/gxnnedu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gxnnfx.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gxnnhexiexinli.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/gxnnhhdzkjyxgs.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gxnnip.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gxnnjn.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/gxnnjqgg.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -58416,7 +58382,6 @@ tls://p1.freedns.controld.com
 [/haoduobao6.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/haoduofangs.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/haoduojiaju.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/haoduojie.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/haoduorou.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/haoduoziti.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/haoe123.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -61567,7 +61532,6 @@ tls://p1.freedns.controld.com
 [/hlnpm.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/hlo-trade.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/hloong.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/hlpolice.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/hlpretty.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/hlqiaojia.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/hlqxj.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -61768,7 +61732,6 @@ tls://p1.freedns.controld.com
 [/hndca.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/hndcyg.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/hndec.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/hndeguang.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/hndfbg.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/hndfsrmyy.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/hndgxh.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -67101,7 +67064,6 @@ tls://p1.freedns.controld.com
 [/ifconfig.cc/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/ifcresidence.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/ifdian.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/ifdoo.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/ifeart.ltd/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/ifedge.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/ifeehei.xyz/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -73608,7 +73570,6 @@ tls://p1.freedns.controld.com
 [/johnmedia.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/johnwatsondev.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/johogames.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/johome.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/johouse.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/joi09110pt.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/joiest.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -78389,7 +78350,6 @@ tls://p1.freedns.controld.com
 [/kuanye.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/kuark.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/kuashou.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/kuashuonk.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/kuayuegroup.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/kubercloud.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/kubesre.xyz/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -83511,7 +83471,6 @@ tls://p1.freedns.controld.com
 [/luluhong.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/luluju.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/lum114.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/lumachain.shop/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/lumai.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/lumajia.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/lumanman1688.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -84244,7 +84203,6 @@ tls://p1.freedns.controld.com
 [/lyxinhua.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/lyxltv.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/lyxsjmm.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/lyxybzd.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/lyxyxx.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/lyy99.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/lyyapp.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -86404,7 +86362,6 @@ tls://p1.freedns.controld.com
 [/meiweibf.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/meiweigroup.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/meiweis.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/meiweisha.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/meiweishudan.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/meiwenfen.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/meiwenting.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -86935,6 +86892,7 @@ tls://p1.freedns.controld.com
 [/miaocode.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/miaodiyun.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/miaodongbar.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
+[/miaodongshenghuo.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/miaofaxian.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/miaogao.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/miaogongzi.cc/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -92369,7 +92327,6 @@ tls://p1.freedns.controld.com
 [/nnhytyy.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/nnhzkj888.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/nnhzt.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/nnipaas.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/nnippsp.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/nnit30.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/nnjajt.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -96950,7 +96907,6 @@ tls://p1.freedns.controld.com
 [/pnwww.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/pnxct.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/pnxs.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/pnxseykj.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/pnxyrykj.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/pnzpw.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/po.co/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -97548,7 +97504,6 @@ tls://p1.freedns.controld.com
 [/promisingedu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/promoadx.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/promonsterbeatsbydre.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/promptchoose.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/pronax.tech/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/pronetway.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/prophecyi.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -98207,7 +98162,6 @@ tls://p1.freedns.controld.com
 [/qbtxt.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qbtzjt.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qbview.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/qbxs.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qbxz.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qc-dds.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qc-hr.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -99257,7 +99211,6 @@ tls://p1.freedns.controld.com
 [/qimengshangwu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qimi.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qimiaosenlin.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/qimiaozhiwu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qimihe.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qiming.info/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qiming.tech/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -100664,6 +100617,7 @@ tls://p1.freedns.controld.com
 [/quba360.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qubaike.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qubaishu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
+[/qubang.cc/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qubaobei.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qubiankeji.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qucai.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -101099,7 +101053,6 @@ tls://p1.freedns.controld.com
 [/qushixi.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qushoumiao.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qushuba.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/qushuba.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qushuiying.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qusibajjj.men/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/qutaiwan.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -102655,7 +102608,6 @@ tls://p1.freedns.controld.com
 [/rivergame.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/riverinepm.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/riverlimittech.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/riveryun.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/rivocean.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/riwise.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/rix-dl.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -105634,7 +105586,6 @@ tls://p1.freedns.controld.com
 [/secu100.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/secun.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/secure-83a.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/secure-923.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/secure-ch-ase03.online/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/secure-chasle026.ink/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/secure-chasle029.wiki/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -106015,7 +105966,6 @@ tls://p1.freedns.controld.com
 [/sex2ribenwuma.wiki/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sex2xiaoluoli.wiki/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sex2yingtaoshipin.wiki/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/sex2youaishipin.wiki/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sext.ie.sogou.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sexytea2013.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/seyoo.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -109773,7 +109723,6 @@ tls://p1.freedns.controld.com
 [/sjzcmw.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sjzcsw.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sjzdbs.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/sjzdongya.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sjzez.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sjzfeitai.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sjzfls.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -113993,7 +113942,6 @@ tls://p1.freedns.controld.com
 [/sunowo.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sunpala.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sunpapergroup.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/sunpassvfgt.xin/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sunpcm.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sunpeed.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/sunplusedu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -118276,7 +118224,6 @@ tls://p1.freedns.controld.com
 [/tianhaohz.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tianhebus.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tianhejiayi.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/tianhelife.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tianheoil.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tianhepiano.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tianheplaza.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -120447,6 +120394,7 @@ tls://p1.freedns.controld.com
 [/tsggwl.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tsggx.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tsgks.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
+[/tsgyun.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tshaisen.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tshe.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tshe.me/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -121492,7 +121440,6 @@ tls://p1.freedns.controld.com
 [/tyqian.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tyqxzx.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tyr.gift/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/tyr8.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tyrad.cc/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tyrantdb.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/tyrantg.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -126754,7 +126701,6 @@ tls://p1.freedns.controld.com
 [/wfkouyaji.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/wflgjx.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/wflps.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/wflscaidian.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/wflushebei.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/wfluxin.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/wfmzjscl.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -130029,7 +129975,6 @@ tls://p1.freedns.controld.com
 [/wzyc.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/wzyds.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/wzyestar.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/wzylrj.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/wzyun.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/wzyzdyf.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/wzz180809.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -132889,7 +132834,6 @@ tls://p1.freedns.controld.com
 [/xionganxinxi.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/xionganzhuce.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/xiongbagk.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/xiongbingtianxia.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/xiongchuan.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/xiongdayq.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/xiongdong.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -134538,7 +134482,6 @@ tls://p1.freedns.controld.com
 [/xuedong97.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/xuedou.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/xueepay.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/xueerdiyi.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/xueersen.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/xueersi.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/xueersibook.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -135918,7 +135861,6 @@ tls://p1.freedns.controld.com
 [/yanhuoidc.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yaniu.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yanjiangwang.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/yanjianshengwu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yanjiao.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yanjiao.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yanjiaoapp.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -136956,7 +136898,6 @@ tls://p1.freedns.controld.com
 [/yh0.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yh2000.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yh31.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/yh5291.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yh596.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yh598.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yh914.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -137526,7 +137467,6 @@ tls://p1.freedns.controld.com
 [/yinbaitu.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yinban.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yinbangbroker.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/yinbaor.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yinbian.cc/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yinbin.ink/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yincat.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -138997,6 +138937,7 @@ tls://p1.freedns.controld.com
 [/yooerjia.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yoofh.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yoogene.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
+[/yoohe.net/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yoohouse.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yoojia.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yoojing.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -140464,7 +140405,6 @@ tls://p1.freedns.controld.com
 [/yugew.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yuglf.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yugongw.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/yugou1688.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yugudz.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yuguimedia.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/yuguo.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
@@ -143829,7 +143769,6 @@ tls://p1.freedns.controld.com
 [/zhiduopc.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/zhidx.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/zhienkeji.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
-[/zhierjie.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/zhifa.cc/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/zhifa315.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
 [/zhifang.com/]https://dns.pub/dns-query 2402:4e00:: 2402:4e00:1:: https://doh.18bit.cn/dns-query quic://dns.alidns.com:853 https://dns.alidns.com/dns-query
