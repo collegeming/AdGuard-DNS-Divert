@@ -7,6 +7,7 @@ import sys
 import json
 import logging
 import datetime
+import idna
 from typing import Dict, List, Tuple
 from collections import defaultdict
 import fnmatch
@@ -299,7 +300,7 @@ def generate_blacklist_config_grouped(cn_domains, foreign_domains, cn_dns, forei
     return '\n'.join(config_lines)
 
 def is_valid_domain(domain):
-    """严格验证域名格式是否合法"""
+    """严格验证域名格式是否合法，包含 Punycode/IDN 验证"""
     # 空域名无效
     if not domain or domain.strip() == "":
         return False
@@ -327,6 +328,16 @@ def is_valid_domain(domain):
         # 标签不能以连字符开头或结尾
         if label.startswith('-') or label.endswith('-'):
             return False
+
+        # 验证 Punycode 标签，防止无效 IDN 域名导致 AdGuard Home 解析失败
+        if label.startswith('xn--'):
+            try:
+                decoded = idna.decode(label)
+                reencoded = idna.encode(decoded).decode('ascii')
+                if label.lower() != reencoded.lower():
+                    return False
+            except idna.IDNAError:
+                return False
     
     # 顶级域名不能以连字符结尾
     if labels[-1].endswith('-'):
