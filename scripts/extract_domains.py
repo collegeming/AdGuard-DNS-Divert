@@ -19,6 +19,7 @@ import base64
 import json
 import urllib.request
 import logging
+import idna
 from typing import List, Set, Dict, Any
 from urllib.error import URLError
 
@@ -59,7 +60,13 @@ def download_file(url: str) -> str:
         return ""
 
 def is_valid_domain(domain: str) -> bool:
-    """验证域名是否有效，并且不是纯IPv4地址"""
+    """验证域名是否有效，并且不是纯IPv4地址
+    
+    额外验证 Punycode/IDN 域名（xn-- 前缀标签），
+    确保生成的配置能被 AdGuard Home 正确解析。
+    AdGuard Home 使用 Go 的 golang.org/x/net/idna.ToASCII 验证，
+    这里用 Python idna 库做等效的 round-trip 验证。
+    """
     if not domain or len(domain) > 253:
         return False
     if domain.startswith('.'):
@@ -74,7 +81,21 @@ def is_valid_domain(domain: str) -> bool:
     if ipv4_pattern.match(domain):
         return False
 
-    return bool(DOMAIN_PATTERN.match(domain))
+    if not DOMAIN_PATTERN.match(domain):
+        return False
+
+    # 验证 Punycode 标签，防止无效 IDN 域名导致 AdGuard Home 解析失败
+    for label in domain.split('.'):
+        if label.startswith('xn--'):
+            try:
+                decoded = idna.decode(label)
+                reencoded = idna.encode(decoded).decode('ascii')
+                if label.lower() != reencoded.lower():
+                    return False
+            except idna.IDNAError:
+                return False
+
+    return True
 
 def extract_domains_from_yaml(content: str) -> Set[str]:
     """从YAML格式的Clash规则列表中提取域名"""
